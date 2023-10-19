@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SideNav from "@/components/SideNav";
+import Canva from "@/components/Canva";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} scroll-auto h-screen w-screen overflow-hidden`}
+      >
+        <div className="absolute top-0 left-0 h-screen w-screen z-100">
+          <Canva />
+        </div>
         {children}
         <SideNav />
       </body>

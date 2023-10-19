@@ -89,7 +89,7 @@ const SideNav = () => {
             },
           },
         }}
-        className="absolute sidebar_dot top-1/2 right-3 bg-white min-w-[8px] h-4 translate-y-[-50%] rounded"
+        className="absolute pointer-events-none sidebar_dot top-1/2 right-3 bg-white min-w-[8px] h-4 translate-y-[-50%] rounded"
       ></motion.div>
       <motion.div
         //text
