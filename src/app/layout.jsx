@@ -13,12 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} scroll-auto h-screen w-screen overflow-hidden`}
-      >
-        <div className="absolute top-0 left-0 h-screen w-screen z-100">
+      <body className={`  w-screen  bg-blue-600 overflow-hidden `}>
+        {/* <div className="absolute top-0 left-0 h-screen w-screen z-100">
           <Canva />
-        </div>
+        </div> */}
         {children}
         <SideNav />
       </body>

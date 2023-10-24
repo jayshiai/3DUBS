@@ -132,7 +132,7 @@ const SideNav = () => {
       animate="invisible"
       whileHover="visible"
       exit="invisible"
-      className="sidebar absolute flex flex-col items-end w-[35px] text-base font-mono font-black tracking-widest   top-1/2  py-4 right-6 text-right  translate-y-[-50%] cursor-default uppercase"
+      className="sidebar fixed flex flex-col items-end w-[35px] text-base font-mono font-black tracking-widest   top-1/2  py-4 right-6 text-right  translate-y-[-50%] cursor-default uppercase"
     >
       {elements}
     </motion.div>

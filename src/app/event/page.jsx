@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import RotatingGrid from "@/components/RotatingGrid";
 
 const page = () => {
   return (
     <>
-      <div className="h-screen w-screen bg-red-600 flex justify-center items-center overflow-hidden"></div>
+      <div className="h-[300vh] w-screen ">
+        <RotatingGrid />
+      </div>
     </>
   );
 };
