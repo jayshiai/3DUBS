@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`  w-screen  bg-blue-600 overflow-hidden `}>
+      <body className={`grid place-content-center   overflow-hidden `}>
         {/* <div className="absolute top-0 left-0 h-screen w-screen z-100">
           <Canva />
         </div> */}

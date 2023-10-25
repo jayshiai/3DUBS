@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const pics = ["11", "12", "13", "14"];
-const ImageColumn = ({ clicked }) => {
+const ImageColumnInverse = ({ clicked }) => {
   const columnContainer = {
     translate: {
-      y: ["0vh", "101.34vh"],
+      y: ["0vh", "-101.34vh"],
       opacity: 0.5,
       transition: {
         y: {
@@ -27,17 +28,17 @@ const ImageColumn = ({ clicked }) => {
     },
 
     exit: {
-      y: "139.34vh",
-
+      y: "-139.34vh",
       transition: {
         duration: 1.5,
         ease: [0.91, 0.13, 0.4, 0.77],
       },
     },
   };
+
   const imageColumn = {
     translate: {
-      y: ["-100vh", "0vh"],
+      y: ["100vh", "0vh"],
       height: ["400vh", "100vh"],
       opacity: 1,
 
@@ -55,27 +56,14 @@ const ImageColumn = ({ clicked }) => {
   };
   return (
     <>
-      {!clicked && (
-        <div className="w-1/5  relative mr-[1.34vh]">
+      {!clicked ? (
+        <div className="w-1/5 relative mr-[1.34vh]">
           <motion.div
             variants={columnContainer}
             animate="translate"
             exit="exit"
-            className="w-full  absolute bottom-0 flex flex-col gap-[1.34vh]"
+            className="w-full   absolute top-0 flex flex-col gap-[1.34vh]"
           >
-            <div className="h-[100vh]   w-full flex flex-col justify-between items-center">
-              {pics.map((pic, index) => (
-                <div key={index} className="w-full h-[24vh] relative">
-                  <Image
-                    src={`/img/${pic}.jpg`}
-                    fill={true}
-                    alt="image"
-                    sizes="20vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
             <motion.div
               layout
               variants={imageColumn}
@@ -93,11 +81,24 @@ const ImageColumn = ({ clicked }) => {
                 </div>
               ))}
             </motion.div>
+            <div className="h-[100vh]   w-full flex flex-col justify-between items-center">
+              {pics.map((pic, index) => (
+                <div key={index} className="w-full h-[24vh] relative">
+                  <Image
+                    src={`/img/${pic}.jpg`}
+                    fill={true}
+                    alt="image"
+                    sizes="20vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
-      )}
+      ) : null}
     </>
   );
 };
 
-export default ImageColumn;
+export default ImageColumnInverse;
