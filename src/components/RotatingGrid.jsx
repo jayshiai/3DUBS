@@ -18,7 +18,7 @@ const RotatingGrid = () => {
   const scale = useTransform(spring, (progress) => 1 + progress * 2);
 
   return (
-    <div className="sticky top-0 h-screen w-screen bg-red-600  flex justify-center items-center overflow-hidden">
+    <div className="sticky top-0 h-screen w-screen flex justify-center items-center overflow-hidden">
       <motion.div
         className=" h-fit  grid  grid-cols-[repeat(9,min(6vw,6vh))] grid-rows-[repeat(10,min(6vw,6vh))] gap-2 origin-[50%_45%]"
         style={{

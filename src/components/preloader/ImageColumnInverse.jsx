@@ -2,13 +2,14 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-const pics = ["11", "12", "13", "14"];
-const ImageColumnInverse = ({ clicked }) => {
+const ImageColumnInverse = ({ clicked, pics, setLoadedImages, loaded }) => {
   const columnContainer = {
+    initial: {
+      opacity: 1,
+    },
     translate: {
       y: ["0vh", "-101.34vh"],
-      opacity: 0.5,
+      opacity: 1,
       transition: {
         y: {
           delay: 1.5,
@@ -37,6 +38,11 @@ const ImageColumnInverse = ({ clicked }) => {
   };
 
   const imageColumn = {
+    initial: {
+      opacity: 0,
+      height: ["100vh"],
+    },
+
     translate: {
       y: ["100vh", "0vh"],
       height: ["400vh", "100vh"],
@@ -57,12 +63,12 @@ const ImageColumnInverse = ({ clicked }) => {
   return (
     <>
       {!clicked ? (
-        <div className="w-1/5 relative mr-[1.34vh]">
+        <div className="w-[25vw] relative mr-[1.34vh]">
           <motion.div
             variants={columnContainer}
-            animate="translate"
+            animate={loaded ? "translate" : "initial"}
             exit="exit"
-            className="w-full   absolute top-0 flex flex-col gap-[1.34vh]"
+            className="w-full  absolute top-0 flex flex-col gap-[1.34vh]"
           >
             <motion.div
               layout
@@ -90,6 +96,7 @@ const ImageColumnInverse = ({ clicked }) => {
                     alt="image"
                     sizes="20vw"
                     className="object-cover"
+                    onLoad={() => setLoadedImages((prev) => prev + 1)}
                   />
                 </div>
               ))}
