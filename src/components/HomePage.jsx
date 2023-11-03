@@ -1,9 +1,26 @@
-import LogoText from "./LogoText";
-import { motion } from "framer-motion";
-import RotatingGrid from "./RotatingGrid";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import ZenEvents from "./ZenEvents";
 import Image from "next/image";
+
+const MotionImage = motion(Image);
 const HomePage = () => {
+  // Create motion values to store the mouse position
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  // Create transform values to move the image based on the mouse position
+  const translateX = useTransform(x, [-200, 200], [-50, 50]);
+  const translateY = useTransform(y, [-200, 200], [-50, 50]);
+
+  // Create a function to handle the mouse move event
+  const handleMouseMove = (event) => {
+    // Get the bounding rectangle of the image container
+    const rect = event.currentTarget.getBoundingClientRect();
+    // Set the motion values to the mouse position relative to the container
+    x.set(event.clientX - rect.left - rect.width / 2);
+    y.set(event.clientY - rect.top - rect.height / 2);
+  };
+
   return (
     <>
       {/* <LogoText /> */}
@@ -25,7 +42,7 @@ const HomePage = () => {
                 }}
                 className=" ave text-[7.5vw]"
               >
-                The{" "}
+                The
               </motion.div>
               <motion.div
                 initial={{
@@ -39,7 +56,7 @@ const HomePage = () => {
                   delay: 1,
                   ease: [1, 0.1, 0.25, 1.5],
                 }}
-                className=" ave text-[max(150px,15vw)] leading-[max(150px,10vw)]"
+                className=" ave text-[max(150px,10vw)] tracking-widest leading-[max(150px,10vw)]"
               >
                 Three Dubs
               </motion.div>
@@ -49,6 +66,7 @@ const HomePage = () => {
             <motion.div
               initial={{
                 width: "0vw",
+                scale: 1,
               }}
               animate={{
                 width: "85vw",
@@ -57,12 +75,19 @@ const HomePage = () => {
                 duration: 1,
                 ease: [1, 0.1, 0.25, 1.5],
               }}
-              className="w-[85vw] h-[40vh] relative"
+              whileHover={{
+                scale: 1.1,
+              }}
+              className="w-[85vw] h-[40vh] relative overflow-hidden rounded-3xl"
+              // Add the mouse move event handler to the image container
+              onMouseMove={handleMouseMove}
             >
-              <Image
+              <MotionImage
                 src="/img/beach.jpg"
                 fill={true}
-                className="rounded-3xl object-cover"
+                className=" object-cover object-[50%_50%] "
+                // Add the transform values to the image style
+                style={{ x: translateX, y: translateY }}
               />
             </motion.div>
           </div>
