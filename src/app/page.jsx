@@ -1,9 +1,12 @@
 "use client";
 import HomePage from "@/components/HomePage";
+import RotatingGrid from "@/components/RotatingGrid";
+import RotatingIntro from "@/components/RotatingIntro";
 import AnimatedText from "@/components/preloader/AnimatedText";
 import ImageColumn from "@/components/preloader/ImageColumn";
 import ImageColumnContainer from "@/components/preloader/ImageColumnContainer";
 import ImageColumnInverse from "@/components/preloader/ImageColumnInverse";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 const picsContainer = [
   "1",
@@ -27,11 +30,12 @@ const picsContainer = [
   "29",
   "30",
 ];
+
 export default function Home() {
   const [clicked, setClicked] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [loadedImages, setLoadedImages] = useState(0);
-  const [textAnimated, setTextAnimated] = useState(false);
+  const [textAnimated, setTextAnimated] = useState(true);
   useEffect(() => {
     if (loadedImages == 20) {
       setTimeout(() => {
@@ -39,12 +43,13 @@ export default function Home() {
       }, 1750);
     }
   }, [loadedImages]);
+
   return (
     <div
       onClick={() => setClicked(true)}
-      className="h-screen w-screen flex justify-around items-center relative "
+      className="w-screen flex justify-around items-center relative "
     >
-      {!loaded && (
+      {/* {!loaded && (
         <div className="text-base text-white absolute z-[300]">
           {Math.floor((loadedImages / 20) * 100)}%
         </div>
@@ -85,8 +90,9 @@ export default function Home() {
         clicked={clicked}
         setTextAnimated={setTextAnimated}
         loaded={loaded}
-      />
+      /> */}
       {textAnimated && <HomePage />}
+      {/* <RotatingIntro /> */}
     </div>
   );
 }

@@ -14,6 +14,7 @@
     "framer-motion": "^10.16.4",
     "next": "13.5.5",
     "react": "^18",
+    "react-curved-text": "^3.0.0",
     "react-dom": "^18",
     "three": "^0.157.0"
   },

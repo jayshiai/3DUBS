@@ -2,12 +2,12 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 const AnimatedText = ({ clicked, setTextAnimated, loaded }) => {
-  const abhivyakti = Array.from("AbhivYakti");
+  const abhivyakti = Array.from("TheThreeDubs");
 
   const textVariant = {
     exit: {
       scale: [1, 0.75, 200],
-      x: ["0%", "0%", "900%"],
+      x: ["0%", "0%", "100%"],
       y: ["0%", "0%", "5000%"],
       transition: {
         delay: 2.5,

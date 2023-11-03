@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 .ave {
   font-family: "Sedgwick Ave Display", cursive;
 }
@@ -29,37 +42,30 @@
 }
 
 #wrapper > .shape:nth-child(1) {
-  background-color: rgb(176, 190, 197);
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(2) {
-  background-color: rgb(245, 245, 245);
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(3) {
-  background-color: rgb(155, 93, 229);
   z-index: 1;
 }
 
 #wrapper > .shape:nth-child(4) {
-  background-color: rgb(241, 91, 181);
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(5) {
-  background-color: rgb(254, 228, 64);
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(6) {
-  background-color: rgb(0, 187, 249);
   z-index: 2;
 }
 
 #wrapper > .shape:nth-child(7) {
-  background-color: rgb(0, 245, 212);
   z-index: 2;
 }
 
@@ -249,4 +255,14 @@
 
 #wrapper[data-roundness="4"] > .shape:nth-child(7) {
   border-top-left-radius: 10rem;
+}
+
+.rotating-curved-text {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }

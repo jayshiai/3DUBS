@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 const LogoText = () => {
-  const abhivyakti = Array.from("AbhivYakti");
+  const abhivyakti = Array.from("ThreeDubs");
 
   const animationVariants = {
     initial: { opacity: 0, y: 150 },
@@ -13,7 +13,6 @@ const LogoText = () => {
     transition: {
       duration: 0.08,
     },
-    hoverEnter: { y: [0, -25] },
   };
 
   return (
@@ -21,7 +20,6 @@ const LogoText = () => {
       <motion.div
         initial="initial"
         animate="animateOutline"
-        whileHover="hoverEnter"
         className="fixed mix-blend-exclusion text-stroke   cursor-pointer z-[100]  rotate-90 top-0 left-0 -translate-x-[40%] translate-y-[100%]  ave  "
       >
         {abhivyakti.map((letter, index) => (
