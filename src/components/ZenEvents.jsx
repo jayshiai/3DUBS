@@ -62,7 +62,6 @@ const ZenEvents = () => {
       <motion.div
         ref={wrapperRef}
         id="wrapper"
-        className="overflow-hidden"
         data-configuration="1"
         data-roundness="1"
         initial="initial"
