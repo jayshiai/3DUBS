@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&family=Sacramento&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +21,13 @@
   font-family: "Sedgwick Ave Display", cursive;
 }
 
+.sacramento {
+  font-family: "Sacramento", cursive;
+}
+
+.rockSalt {
+  font-family: "Rock Salt", cursive;
+}
 .text-stroke {
   color: transparent;
   text-stroke: 1px rgb(150, 150, 150);
