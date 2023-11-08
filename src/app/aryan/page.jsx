@@ -1,10 +1,4 @@
-import GLTextSphere from "@/components/GL/GLTextSphere";
-import GLTextTorus from "@/components/GL/GLTextTorus";
-import GLText from "@/components/GL/GLTextTorus";
 import GLTextTwister from "@/components/GL/GLTextTwister";
-import GlComponent from "@/components/GL/GlComponent";
-import React from "react";
-
 const page = () => {
   return (
     <>
