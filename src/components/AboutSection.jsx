@@ -4,7 +4,7 @@ import HeroImage from "@/components/HeroImage";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const AboutSection = ({ name, setCurrent, next }) => {
+const AboutSection = ({ name, setCurrent, next, fontFamily, theme }) => {
   return (
     <motion.div
       initial={{
@@ -16,14 +16,15 @@ const AboutSection = ({ name, setCurrent, next }) => {
         opacity: 1,
       }}
       transition={{
-        duration: 1,
+        duration: 0.5,
+        ease: "easeIn",
       }}
       exit={{
         x: "-100%",
       }}
       className="h-full w-full"
     >
-      <AboutTitle name={name} />
+      <AboutTitle fontFamily={fontFamily} name={name} />
       <div className="h-[47.5%] w-full ">
         <div className="h-[20%] flex items-center justify-between px-5">
           <div className="text-xl font-mono opacity-60">15 / 04</div>
@@ -35,7 +36,10 @@ const AboutSection = ({ name, setCurrent, next }) => {
 
       <div
         onClick={() => setCurrent(next)}
-        className="h-[10%] w-full cursor-pointer  m-auto  bg-black rounded-3xl text-white flex items-center justify-end px-14 text-5xl"
+        style={{
+          backgroundColor: `${theme}`,
+        }}
+        className="h-[10%] w-full cursor-pointer  m-auto  rounded-3xl text-white flex items-center justify-end px-14 text-5xl"
       >
         <div className="ave mt-3 mr-5 tracking-wider">Next Dub</div>
 
