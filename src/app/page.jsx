@@ -92,6 +92,7 @@ export default function Home() {
         loaded={loaded}
       /> */}
       {textAnimated && <HomePage />}
+
       {/* <RotatingIntro /> */}
     </div>
   );
