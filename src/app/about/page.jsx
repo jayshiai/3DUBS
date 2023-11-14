@@ -4,13 +4,31 @@ import AboutSection from "@/components/AboutSection";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
+import AboutIntro from "@/components/AboutIntro";
 const sections = [
   { name: "Aryan Chouhan", next: 1, fontFamily: "rockSalt", theme: "#EF4444" },
   { name: "Kunal Sharma", next: 0, fontFamily: "sacramento", theme: "#3399ff" },
 ];
-
+const placeholderText = [
+  {
+    type: "paragraph",
+    text: "I don't know who I am. I have searched through all the heavens and earth and found nothing. But when I looked into myself, I found only darkness.",
+  },
+  {
+    type: "paragraph",
+    text: "What does it mean to be alive yet dead? Do I exist for sake of existence? Am I doomed to forever wander in search of myself?",
+  },
+];
+// const placeholderText = [
+//   { type: "paragraph", text: "Framer Motion" },
+//   {
+//     type: "paragraph",
+//     text: "Animating responsive text!",
+//   },
+// ];
 const page = () => {
   const [current, setCurrent] = useState(0);
+
   return (
     <div className="h-screen w-screen overflow-hidden bg-black py-1 px-2">
       <AboutNav />
@@ -28,101 +46,14 @@ const page = () => {
           </AnimatePresence>
         </div>
         <div className="overflow-hidden col-span-3 h-full bg-white rounded-2xl ">
-          <div
-            className={`text-5xl h-[12.5%] p-5 ${sections[current].fontFamily}`}
-          >
-            About
-          </div>
-          <motion.div
-            initial={{
-              x: "-100%",
-            }}
-            animate={{
-              x: "0%",
-            }}
-            transition={{
-              duration: 0.5,
-              ease: "linear",
-            }}
-            className="w-full h-1  bg-black"
-          ></motion.div>
-          <div className="overflow-hidden w-full h-[40%] flex">
-            <div className="h-full w-4/5"></div>
-            <motion.div
-              initial={{
-                y: "-100%",
-              }}
-              animate={{
-                y: "0%",
-              }}
-              transition={{
-                delay: 0.4,
-                duration: 0.5,
-                ease: "linear",
-              }}
-              className="h-full w-1 bg-black"
-            ></motion.div>
-            <div
-              style={{
-                backgroundColor: `${sections[current].theme}`,
-              }}
-              className="w-1/5 h-full "
-            ></div>
-          </div>
-          <motion.div
-            initial={{
-              x: "-100%",
-            }}
-            animate={{
-              x: "0%",
-            }}
-            transition={{
-              duration: 0.5,
-              ease: "linear",
-            }}
-            className="w-full h-1  bg-black"
-          ></motion.div>
-          <div
-            className={`text-5xl h-[12.5%] p-5 ${sections[current].fontFamily}`}
-          >
-            Skills
-          </div>
-          <motion.div
-            initial={{
-              x: "-100%",
-            }}
-            animate={{
-              x: "0%",
-            }}
-            transition={{
-              duration: 0.5,
-              ease: "linear",
-            }}
-            className="w-full h-1  bg-black"
-          ></motion.div>
-          <div className="overflow-hidden w-full h-[35%] flex justify-end">
-            <div
-              style={{
-                backgroundColor: `${sections[current].theme}`,
-              }}
-              className="h-full w-[20%]"
-            ></div>
-            <motion.div
-              initial={{
-                y: "-100%",
-              }}
-              animate={{
-                y: "0%",
-              }}
-              transition={{
-                delay: 0.4,
-                duration: 0.5,
-                ease: "linear",
-              }}
-              className="h-full w-1 bg-black"
-            ></motion.div>
-            <div className="w-[80%]"></div>
-          </div>
+          <AnimatePresence mode="wait">
+            <AboutIntro
+              key={sections[current].fontFamily}
+              theme={sections[current].theme}
+              fontFamily={sections[current].fontFamily}
+              placeholderText={placeholderText}
+            />
+          </AnimatePresence>
         </div>
       </div>
     </div>

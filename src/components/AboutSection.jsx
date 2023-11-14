@@ -8,7 +8,7 @@ const AboutSection = ({ name, setCurrent, next, fontFamily, theme }) => {
   return (
     <motion.div
       initial={{
-        x: "100%",
+        x: "-100%",
         opacity: 0,
       }}
       animate={{
@@ -20,7 +20,7 @@ const AboutSection = ({ name, setCurrent, next, fontFamily, theme }) => {
         ease: "easeIn",
       }}
       exit={{
-        x: "-100%",
+        x: "100%",
       }}
       className="h-full w-full"
     >

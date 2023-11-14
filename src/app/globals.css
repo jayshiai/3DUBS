@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,6 +26,9 @@
   font-family: "Sacramento", cursive;
 }
 
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
 .rockSalt {
   font-family: "Rock Salt", cursive;
 }
