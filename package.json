@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.88.4",
     "@react-three/fiber": "^8.14.6",
     "framer-motion": "^10.16.4",
+    "gsap": "^3.12.4",
     "load-bmfont": "^1.4.1",
     "next": "13.5.5",
     "noisejs": "^2.1.0",
@@ -22,6 +23,7 @@
     "react-curved-text": "^3.0.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
+    "react-spring": "^9.7.3",
     "react-three-fiber": "^6.0.13",
     "three": "^0.157.0",
     "three-bmfont-text": "^3.0.1"

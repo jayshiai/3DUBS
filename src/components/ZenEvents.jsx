@@ -120,7 +120,7 @@ const ZenEvents = () => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          Forever Changing
+          The Three Dubs
         </motion.p>
       </div>
 
@@ -132,7 +132,7 @@ const ZenEvents = () => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          Forever Changing
+          The Three Dubs
         </motion.p>
       </div>
     </>
