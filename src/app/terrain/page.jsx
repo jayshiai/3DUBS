@@ -8,24 +8,31 @@ import { useSearchParams } from 'next/navigation'
 
 
 const page = () => {
+
     const currentHour = new Date().getHours();
     let dayTime;
-    const searchParams = useSearchParams()
+    const urlParams = useSearchParams().get('dayTime')
     let ratio = 1;
+    if (urlParams) {
+        dayTime = urlParams % 3
+    } else {
+        if ((currentHour >= 8 && currentHour < 16)) {
+            dayTime = 0;
+        } else if ((currentHour >= 16 && currentHour < 20) || (currentHour >= 5 && currentHour < 8)) {
+            dayTime = 2;
+        } else {
+            dayTime = 1;
+        }
+    }
     // Use useEffect to execute code after the component mounts
     useEffect(() => {
         // Access and use the query parameters
         ratio = window.innerWidth / window.innerHeight;
 
+
     }, []); // Add any dependencies if needed
 
-    if ((currentHour >= 8 && currentHour < 16)) {
-        dayTime = 0;
-    } else if ((currentHour >= 16 && currentHour < 20) || (currentHour >= 5 && currentHour < 8)) {
-        dayTime = 2;
-    } else {
-        dayTime = 1;
-    }
+
 
 
     const fogColor = [0xffffff, 0x000000, 0x333333]
