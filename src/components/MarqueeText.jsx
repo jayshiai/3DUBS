@@ -56,7 +56,7 @@ function TextComp({ text, color }) {
 }
 
 
-function Cube({text, hovered, color}) {
+function Cube({ text, hovered, color }) {
   const cam = useRef();
   const time = useRef(0);
   const mat = useRef();
@@ -84,23 +84,23 @@ function Cube({text, hovered, color}) {
 
   return (
     <>
-      {createPortal(<TextComp text={text} color={color}/>, scene)}
-      <Plane args={[60,45,1]}><shaderMaterial
-          ref={mat}
-          attach="material"
-          args={[BoxShaderMaterial]}
-          uniforms-uTexture-value={target.texture} // Pass the time value to the shader
-        /></Plane>
-      
+      {createPortal(<TextComp text={text} color={color} />, scene)}
+      <Plane args={[60, 45, 1]}><shaderMaterial
+        ref={mat}
+        attach="material"
+        args={[BoxShaderMaterial]}
+        uniforms-uTexture-value={target.texture} // Pass the time value to the shader
+      /></Plane>
+
     </>
   );
 }
 
-const MarqueeText = ({text, hovered,color }) => {
+const MarqueeText = ({ text, hovered, color }) => {
 
   return (
     <>
-      
+
       <PerspectiveCamera
         makeDefault
         fov={30}
@@ -111,8 +111,8 @@ const MarqueeText = ({text, hovered,color }) => {
       />
       <color attach="background" args={["#3e64ff"]} />
 
-      <Cube text={text} hovered={hovered} color={color}/>
-    
+      <Cube text={text} hovered={hovered} color={color} />
+
     </>
   );
 };
