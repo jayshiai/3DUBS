@@ -1,9 +1,5 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import SideNav from "@/components/SideNav";
-import Canva from "@/components/Canva";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -13,12 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`grid place-content-center   overflow-hidden `}>
-        {/* <div className="absolute top-0 left-0 h-screen w-screen z-100">
-          <Canva />
-        </div> */}
+      <body
+        className={`no-scrollbar grid place-content-center bg-white  overflow-x-hidden  `}
+      >
         {children}
-        <SideNav />
       </body>
     </html>
   );

@@ -1,11 +1,11 @@
 "use client";
 import { motion, stagger } from "framer-motion";
 import { useEffect } from "react";
-const SideNav = () => {
+const SideNav = ({setColor}) => {
   const events = [
-    { title: "Fun", theme: "#fff" },
-    { title: "Exciting", theme: "#fe3448" },
-    { title: "Mind Blowing", theme: "#66ffde" },
+    { title: "Fun", theme: "#000" },
+    { title: "Exciting", theme: "#9d4edd" },
+    { title: "Mind Blowing", theme: "#29bf12" },
     { title: "Thrilling", theme: "#fff794" },
     { title: "Shocking", theme: "#30e7ff" },
   ];
@@ -19,11 +19,11 @@ const SideNav = () => {
       sidebar_item.style.opacity = 1;
       sidebar_item.firstChild.style.backgroundColor =
         sidebar_item.dataset.color;
-
+      setColor(sidebar_item.dataset.color);
       sidebar_items.forEach((item) => {
         if (item != sidebar_item) {
           item.style.opacity = 0.4;
-          item.firstChild.style.backgroundColor = "#fff";
+          item.firstChild.style.backgroundColor = "#4aba91";
         }
       });
     };
@@ -89,7 +89,7 @@ const SideNav = () => {
             },
           },
         }}
-        className="absolute pointer-events-none sidebar_dot top-1/2 right-3 bg-white min-w-[8px] h-4 translate-y-[-50%] rounded"
+        className="absolute pointer-events-none sidebar_dot top-1/2 right-3 bg-[#4aba91] min-w-[8px] h-4 translate-y-[-50%] rounded"
       ></motion.div>
       <motion.div
         //text
