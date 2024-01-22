@@ -35,7 +35,7 @@ export default function Home() {
   const [clicked, setClicked] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [loadedImages, setLoadedImages] = useState(0);
-  const [textAnimated, setTextAnimated] = useState(true);
+  const [textAnimated, setTextAnimated] = useState(false);
   useEffect(() => {
     if (loadedImages == 20) {
       setTimeout(() => {
@@ -47,9 +47,9 @@ export default function Home() {
   return (
     <div
       onClick={() => setClicked(true)}
-      className="w-screen flex justify-around items-center relative "
+      className="h-screen w-screen flex justify-around items-center relative "
     >
-      {/* {!loaded && (
+      {!loaded && (
         <div className="text-base text-white absolute z-[300]">
           {Math.floor((loadedImages / 20) * 100)}%
         </div>
@@ -90,7 +90,7 @@ export default function Home() {
         clicked={clicked}
         setTextAnimated={setTextAnimated}
         loaded={loaded}
-      /> */}
+      />
       {textAnimated && <HomePage />}
 
       {/* <RotatingIntro /> */}
