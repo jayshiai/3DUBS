@@ -4,6 +4,7 @@ import IntroWithLowerImage from "./IntroWithLowerImage";
 import RandomCircle from "./RandomCircle";
 import ZenEvents from "./ZenEvents";
 import MarqueeText from "./MarqueeText";
+import LogoOverlay from "./LogoOverlay";
 
 const HomePage = () => {
 
@@ -12,9 +13,11 @@ const HomePage = () => {
   return (
     <>
       {/* <LogoText /> */}
+
       <CursorEffect />
 
       <div className="w-screen h-screen flex justify-center items-center">
+        <LogoOverlay />
         <ZenEvents />
       </div>
       <div className='h-screen w-screen absolute top-0 left-0 -z-10'>
