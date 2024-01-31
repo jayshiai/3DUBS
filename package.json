@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.88.4",
+    "@react-three/drei": "^9.96.5",
     "@react-three/fiber": "^8.14.6",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.4",
