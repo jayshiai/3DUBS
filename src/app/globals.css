@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&family=Sacramento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Raleway:wght@900&family=Rubik+Mono+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +22,19 @@
   /* Firefox */
 }
 
+.rubik {
+  font-family: 'Rubik Mono One', monospace;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.monofett {
+  font-family: 'Monofett', monospace;
+
+}
+
 .ave {
   font-family: "Sedgwick Ave Display", cursive;
 }
@@ -34,6 +48,10 @@
 }
 
 .rockSalt {
+  font-family: "Rock Salt", cursive;
+}
+
+.textHover:hover {
   font-family: "Rock Salt", cursive;
 }
 

@@ -1,3 +1,4 @@
+import Clock from '@/components/contact/Clock';
 import React from 'react'
 import { FaGithub, FaInstagram } from "react-icons/fa6";
 const page = () => {
@@ -19,8 +20,8 @@ const page = () => {
                 <div className='absolute top-10 right-8 md:right-16'>
 
                     <div className='flex gap-4'>
-                        <FaInstagram className='text-2xl md:text-3xl' />
-                        <FaGithub className='text-2xl md:text-3xl' />
+                        <FaInstagram className='text-2xl md:text-3xl cursor-pointer' />
+                        <FaGithub className='text-2xl md:text-3xl cursor-pointer' />
                     </div>
                 </div>
 
@@ -29,7 +30,6 @@ const page = () => {
                     <div className='flex gap-4'><span className='opacity-50'>@</span><span className=' font-bold'>jayvardhanpatil7811@gmail.com</span></div>
                     <div className='flex gap-4'><span className='opacity-50'>W</span><span className=' font-bold'>jayshiai.github.io</span></div>
                 </div>
-
 
             </div>
         </div>
