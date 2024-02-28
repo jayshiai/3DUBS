@@ -1,9 +1,11 @@
+"use client"
 import GLTextTorus from "@/components/GL/GLTextTorus";
 import IndividualAbout from "@/components/IndividualAbout";
-
+import LocomotiveScroll from 'locomotive-scroll';
 const description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam minima expedita maxime ab esse neque, velit enim, fugiat optio quaerat non voluptate cupiditate perspiciatis harum hic! Ducimus asperiores assumenda, beatae perferendis sunt at, nisi veritatis molestias vitae, neque minus unde aut repudiandae sapiente error deleniti reprehenderit officiis doloremque enim qui."
 
 const page = () => {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <div className="h-screen w-screen fixed top-0 left-0 -z-10">

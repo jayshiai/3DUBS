@@ -9,7 +9,7 @@ const Particle = ({ position, color, scale }) => {
 
   return (
     <mesh ref={mesh} position={position} scale={scale ? scale : 1}>
-      <sphereGeometry args={[0.1, 32, 32]} />
+      <sphereGeometry args={[0.1, 4, 4]} />
       <meshStandardMaterial color={color} />
     </mesh>
   );
