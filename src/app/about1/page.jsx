@@ -416,7 +416,7 @@ const page = () => {
 
             <div className=' h-[200vh] relative w-screen overflow-hidden'>
 
-                <div ref={handRef} className='relative will-change-transform flex items-end justify-center w-screen  h-screen'>
+                <div ref={handRef} className='relative flex items-end justify-center w-screen  h-screen'>
 
 
                     <Image fill={true} src={"/assets/hand.png"} className=' -z-10 translate-y-[10%] md:translate-y-0 object-contain' />
@@ -425,25 +425,25 @@ const page = () => {
             </div>
 
             <div className='h-[400vh] w-screen relative'>
-                <div ref={godTextRef} className='will-change-transform h-screen w-full text-green-600 flex flex-col items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl raleway   overflow-hidden'>
+                <div ref={godTextRef} className=' h-screen w-full text-green-600 flex flex-col items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl raleway   overflow-hidden'>
                     <div className='relative text-center before:content-["Through"] before:absolute before:top-[-20px] before:left-0 before:text-base after:content-["we_grow!"] after:absolute after:bottom-[-20px] after:right-0 after:text-base'>Collaboration and Cooperation</div>
                 </div>
 
                 <div className='h-[200vh] w-screen flex overflow-hidden'>
-                    <div ref={adamsHandRef} className='will-change-transform relative h-screen -translate-x-[100%]  w-[50vw]'>
+                    <div ref={adamsHandRef} className=' relative h-screen -translate-x-[100%]  w-[50vw]'>
                         <Image fill={true} src={"/assets/adams_hand.webp"} className='object-contain ' />
                     </div>
 
-                    <div ref={godsHandRef} className='will-change-transform relative h-screen translate-x-[100%]  w-[50vw]'>
+                    <div ref={godsHandRef} className=' relative h-screen translate-x-[100%]  w-[50vw]'>
                         <Image fill={true} src={"/assets/gods_hand.webp"} className=' object-contain ' />
                     </div>
-                    <div ref={roseRef} className='will-change-transform  h-screen w-screen flex justify-center items-center scale-0 absolute -z-10'>
+                    <div ref={roseRef} className=' h-screen w-screen flex justify-center items-center scale-0 absolute -z-10'>
                         <div className='relative h-1/2 w-1/2'>
                             <Image fill={true} src={"/assets/rose.png"} className=' object-contain' />
                         </div>
                     </div>
                 </div>
-                <div ref={threeDubsRef} className='will-change-transform absolute -z-20 top-0 h-screen w-screen flex justify-center items-center overflow-hidden '>
+                <div ref={threeDubsRef} className=' absolute -z-20 top-0 h-screen w-screen flex justify-center items-center overflow-hidden '>
                     <div ref={screenRef} className='absolute h-screen w-[70vw] bg-white z-0 -left-[10vw] top-0'></div>
                     <div className='flex'>
                         <div ref={threeRef} className='ave text-[30vw] leading-none z-10 translate-x-[37.5vw] opacity-10'>3</div>
