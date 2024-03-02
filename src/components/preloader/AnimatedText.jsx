@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-const AnimatedText = ({ clicked, setTextAnimated, loaded }) => {
+const AnimatedText = ({ clicked, setCompleted, loaded }) => {
   const abhivyakti = Array.from("TheThreeDubs");
 
   const textVariant = {
@@ -74,7 +74,7 @@ const AnimatedText = ({ clicked, setTextAnimated, loaded }) => {
         <motion.div
           variants={textVariant}
           exit="exit"
-          onAnimationComplete={() => setTextAnimated(true)}
+          onAnimationComplete={() => setCompleted(true)}
           className=" whitespace-nowrap text-white font-mono ave cursor-pointer z-[100] text-7xl md:text-9xl"
         >
           <div className="overflow-hidden ">

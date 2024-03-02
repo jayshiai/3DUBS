@@ -26,7 +26,7 @@ const TaskButton = ({ text, image, selected, setBindows }) => {
         <div onClick={handleClick} className={`h-[26px] my-[3px] w-[150px] ${selected ? 'bg-[url("/assets/bindows/btn3.png")]' : 'bg-[url("/assets/bindows/btn1.png")] hover:bg-[url("/assets/bindows/btn2.png")]'}  flex gap-1 items-center py-4 px-2 cursor-pointer`}>
 
             <Image src={image} height={18} width={18} className=' h-5 w-5' />
-            <p className='text-white text-sm'>{text}</p>
+            <p className='text-white text-sm whitespace-nowrap overflow-hidden'>{text}</p>
         </div>
     )
 }

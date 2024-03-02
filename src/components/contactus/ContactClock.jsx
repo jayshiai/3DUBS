@@ -1,8 +1,7 @@
 import Clock from "@/components/contact/Clock"
 import { CiGlobe } from "react-icons/ci";
 import { PiArrowArcLeftThin } from "react-icons/pi";
-const page = () => {
-
+const ContactClock = () => {
     return (
         <div className='h-screen w-screen bg-black text-white overflow-hidden'>
             <div className="w-full h-2/3 lg:h-1/2 flex lg:flex-row flex-col">
@@ -38,4 +37,4 @@ const page = () => {
     )
 }
 
-export default page
+export default ContactClock

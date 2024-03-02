@@ -1,99 +1,82 @@
+
 "use client";
-import HomePage from "@/components/HomePage";
-import RotatingGrid from "@/components/RotatingGrid";
-import RotatingIntro from "@/components/RotatingIntro";
-import AnimatedText from "@/components/preloader/AnimatedText";
-import ImageColumn from "@/components/preloader/ImageColumn";
-import ImageColumnContainer from "@/components/preloader/ImageColumnContainer";
-import ImageColumnInverse from "@/components/preloader/ImageColumnInverse";
-import { motion } from "framer-motion";
+import ImageIntro from "@/components/intro/ImageIntro";
+
 import { useEffect, useState } from "react";
-const picsContainer = [
-  "1",
-  "12",
-  "23",
-  "34",
-  "45",
-  "6",
-  "17",
-  "28",
-  "39",
-  "10",
-  "21",
-  "32",
-  "43",
-  "14",
-  "25",
-  "36",
-  "47",
-  "18",
-  "29",
-  "30",
-];
+import HomeZen from "@/components/home/HomeZen";
+import HomeCircle from "@/components/home/HomeCircle";
+import HomeTerrain from "@/components/home/HomeTerrain";
+import HomeTunnelOne from "@/components/home/HomeTunnelOne";
+import HomeTunnelTwo from "@/components/home/HomeTunnelTwo";
+import Bindows from "@/components/home/Bindows";
+
+
+
+function hasConfigInSessionStorage() {
+  return !!sessionStorage.getItem('config');
+}
+
 
 export default function Home() {
-  const [clicked, setClicked] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-  const [loadedImages, setLoadedImages] = useState(0);
-  const [textAnimated, setTextAnimated] = useState(false);
+
+  const [completed, setCompleted] = useState(false);
+  const variants = [<HomeZen />, <HomeCircle />, <HomeTerrain />, <HomeTunnelOne />, <HomeTunnelTwo />, <Bindows />];
+  // State to hold the selected variant index
+  const [variantIndex, setVariantIndex] = useState();
+
+
+
   useEffect(() => {
-    if (loadedImages == 20) {
-      setTimeout(() => {
-        setLoaded(true);
-      }, 1750);
+    // Check if the configuration already exists in Session Storage
+    if (!hasConfigInSessionStorage()) {
+      // Define your list of items with their variants
+      const items = {
+        "intro": 3,
+        "about": 2,
+        "home": 6,
+        "contact": 2,
+        "projects": 1,
+        "loading": 6,
+        "cursor": 2,
+        "individual": 2,
+        "nav": 2
+      };
+
+      // Define an object to store the selected configuration
+      const selectedConfig = {};
+
+      // Iterate through each item in the list
+      for (const item in items) {
+        if (items.hasOwnProperty(item)) {
+          // Randomly select a variant for the current item
+          const randomVariant = Math.floor(Math.random() * items[item]);
+
+          // Store the selected variant in the configuration object
+          selectedConfig[item] = randomVariant;
+        }
+      }
+
+      // Convert the selected configuration object to a JSON string
+      const configJSON = JSON.stringify(selectedConfig);
+
+      // Store the configuration in Session Storage
+      sessionStorage.setItem('config', configJSON);
+      setVariantIndex(selectedConfig['home']);
+      // Output the selected configuration
+      console.log("Configuration stored in Session Storage:", selectedConfig);
     }
-  }, [loadedImages]);
+  }, []); // Empty dependency array ensures this effect runs only once on component mount
 
   return (
-    <div
-      onClick={() => setClicked(true)}
-      className="h-screen w-screen flex justify-around items-center relative "
-    >
-      {!loaded && (
-        <div className="text-base text-white absolute z-[300]">
-          {Math.floor((loadedImages / 20) * 100)}%
-        </div>
-      )}
-      <ImageColumnContainer clicked={clicked} loaded={loaded}>
-        <ImageColumnInverse
-          clicked={clicked}
-          pics={picsContainer.slice(0, 4)}
-          setLoadedImages={setLoadedImages}
-          loaded={loaded}
-        />
-        <ImageColumn
-          clicked={clicked}
-          pics={picsContainer.slice(4, 8)}
-          setLoadedImages={setLoadedImages}
-          loaded={loaded}
-        />
-        <ImageColumnInverse
-          clicked={clicked}
-          pics={picsContainer.slice(8, 12)}
-          setLoadedImages={setLoadedImages}
-          loaded={loaded}
-        />
-        <ImageColumn
-          clicked={clicked}
-          pics={picsContainer.slice(12, 16)}
-          setLoadedImages={setLoadedImages}
-          loaded={loaded}
-        />
-        <ImageColumnInverse
-          clicked={clicked}
-          pics={picsContainer.slice(16, 20)}
-          setLoadedImages={setLoadedImages}
-          loaded={loaded}
-        />
-      </ImageColumnContainer>
-      <AnimatedText
-        clicked={clicked}
-        setTextAnimated={setTextAnimated}
-        loaded={loaded}
-      />
-      {textAnimated && <HomePage />}
+    <>
+      {!completed && <ImageIntro completed={completed} setCompleted={setCompleted} />}
+      {completed && variants[variantIndex]}
 
-      {/* <RotatingIntro /> */}
-    </div>
+
+      <script src='./js/three.min.js'></script>
+      <script src='./js/perlin.js'></script>
+      <script src='./js/TweenMax.min.js'></script>
+
+    </>
   );
 }

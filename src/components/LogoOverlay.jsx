@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { motion, useAnimate } from 'framer-motion'
 const LogoOverlay = () => {
     const [scope, animate] = useAnimate()
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(false);
 
 
     const item = {

@@ -283,5 +283,6 @@ Particle.prototype.update = function (tunnel) {
 window.onload = function () {
 
   window.tunnel = new Tunnel();
+  console.log("bitch")
 
 };

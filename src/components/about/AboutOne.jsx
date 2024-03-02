@@ -9,8 +9,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
-
-const page = () => {
+const AboutOne = () => {
     const { scrollYProgress } = useScroll();
 
 
@@ -461,4 +460,4 @@ const page = () => {
     )
 }
 
-export default page
+export default AboutOne

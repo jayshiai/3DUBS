@@ -58,6 +58,7 @@ const DesktopIcon = ({ text, url, image, bindows, setBindows }) => {
                 drag
                 dragMomentum={false}
                 onDoubleClick={handleDoubleClick}
+
                 onClick={handleSingleClick}
                 ref={desktopIconRef}
                 className='group  h-24 w-24 flex flex-col items-center justify-center'>
@@ -66,7 +67,7 @@ const DesktopIcon = ({ text, url, image, bindows, setBindows }) => {
                     style={{
                         textShadow: "1px 1px 1px #333",
                     }}
-                    className={`text-sm text-white ${clicked ? "bg-[#3d64bd]" : "group-hover:bg-[#3d64bd]/50"}`}
+                    className={`text-sm text-white whitespace-nowrap  ${clicked ? "bg-[#3d64bd]" : "group-hover:bg-[#3d64bd]/50"}`}
                 >
                     {text}
                 </p>

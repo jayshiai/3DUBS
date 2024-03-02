@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 const BindowsFrame = ({ text, url, setOpen, bindows, setBindows }) => {
     const [width, setWidth] = useState(400); // Initial width
     const [height, setHeight] = useState(400); // Initial height
-    const [x, setX] = useState(500);
-    const [y, setY] = useState(100);
+    const [x, setX] = useState(window.innerWidth / 3);
+    const [y, setY] = useState(window.innerHeight / 4);
 
     const [fullScreen, setFullScreen] = useState([x, y, 400, 400, false]);
     const [isResizing, setIsResizing] = useState(false);

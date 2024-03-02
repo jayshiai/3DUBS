@@ -4,19 +4,21 @@ import StartButton from '@/components/bindows/StartButton'
 import StartMenu from '@/components/bindows/StartMenu'
 import TaskButton from '@/components/bindows/TaskButton'
 import TimeButton from '@/components/bindows/TimeButton'
-
+import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
-const page = () => {
+const Bindows = ({ completed }) => {
     const [open, setOpen] = useState(false)
     const [bindows, setBindows] = useState({})
+    const pathname = usePathname()
+
     return (
         <div className='h-screen w-screen overflow-hidden '>
-            <div id='screen' className=' h-[calc(100vh-32px)] bg-[url("/assets/bindows/windows_xp_bliss.jpg")] bg-cover'>
+            <div onClick={() => setOpen(false)} id='screen' className=' h-[calc(100vh-32px)] bg-[url("/assets/bindows/windows_xp_bliss.jpg")] bg-cover'>
 
                 <DesktopIcon url='http://localhost:3000/about1' image="/assets/bindows/my_computer.png" text="My Computer" bindows={bindows} setBindows={setBindows} />
                 <DesktopIcon url='http://localhost:3000/nav' image="/assets/bindows/outlook.png" text="asd" bindows={bindows} setBindows={setBindows} />
-                <DesktopIcon url='http://localhost:3000/contact' image="/assets/bindows/logo.png" text="asdasd" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url={pathname == "/bindows" ? 'http://localhost:3000/bindows2' : 'http://localhost:3000/bindows'} image="/assets/bindows/logo.png" text="Bindows Emulator" bindows={bindows} setBindows={setBindows} />
             </div>
             <div className='relative'>
                 <StartMenu open={open} />
@@ -39,4 +41,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Bindows
