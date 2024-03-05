@@ -272,7 +272,7 @@ const BindowsFrame = ({ text, url, setOpen, bindows, setBindows }) => {
             </div>
 
             {/* Content */}
-            <div className='h-[calc(100%-35px)] w-full px-[2px] pb-[2px]'>
+            <div className={`${bindows[text].selected ? "pointer-events-auto" : "pointer-events-none"} h-[calc(100%-35px)] w-full px-[2px] pb-[2px]`}>
                 <div className='h-full w-full '>
                     <iframe onMouseDown={handleBindowsClick} className='-z-10 h-full w-full' src={url} />
                 </div>

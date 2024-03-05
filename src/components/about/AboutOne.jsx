@@ -6,10 +6,13 @@ import { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import LocomotiveScroll from 'locomotive-scroll';
+import { useRouter } from 'next/navigation'
+import BackButton from '../BackButton'
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
 const AboutOne = () => {
+    const router = useRouter();
     const { scrollYProgress } = useScroll();
 
 
@@ -185,7 +188,9 @@ const AboutOne = () => {
 
             },
         });
-
+        router.prefetch('/jayvardhan');
+        router.prefetch('/aryan');
+        router.prefetch('/kunal');
 
     }, []);
 
@@ -231,6 +236,7 @@ const AboutOne = () => {
     }
     return (
         <>
+            <BackButton color={true} />
             <motion.div
                 className='fixed z-50 right-4 bottom-4 h-5 w-24 flex justify-center items-center rounded-lg bg-slate-100  overflow-hidden'>
                 <motion.div
@@ -297,7 +303,7 @@ const AboutOne = () => {
                         <div className='w-full h-[15%] flex items-center border-y px-4 text-4xl  uppercase '>
                             <AnimatedTextCharacter text="Members" delay={0} stagger={0.05} yOffset={"80vh"} />
                         </div>
-                        <div className='w-full min-h-[20%] border-b '>
+                        <div onClick={() => router.push("/jayvardhan")} className='w-full min-h-[20%] border-b'>
                             <motion.div
                                 initial={{
                                     x: '100%',
@@ -314,7 +320,8 @@ const AboutOne = () => {
                                 Jayvardhan Patil
                             </motion.div>
                         </div>
-                        <div className='w-full  min-h-[20%] border-b '>
+
+                        <div onClick={() => router.push("/aryan")} className='w-full  min-h-[20%] border-b '>
                             <motion.div
                                 initial={{
                                     x: '100%',
@@ -332,7 +339,7 @@ const AboutOne = () => {
                             </motion.div>
                         </div>
 
-                        <div className='w-full  min-h-[20%] border-b '>
+                        <div onClick={() => router.push("/kunal")} className='w-full  min-h-[20%] border-b '>
                             <motion.div
                                 initial={{
                                     x: '100%',

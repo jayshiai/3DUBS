@@ -9,6 +9,7 @@ import HomeTerrain from "@/components/home/HomeTerrain";
 import HomeTunnelOne from "@/components/home/HomeTunnelOne";
 import HomeTunnelTwo from "@/components/home/HomeTunnelTwo";
 import Bindows from "@/components/home/Bindows";
+import BindowsInto from "@/components/intro/BindowsIntro";
 
 
 
@@ -31,7 +32,7 @@ export default function Home() {
     if (!hasConfigInSessionStorage()) {
       // Define your list of items with their variants
       const items = {
-        "intro": 3,
+        "intro": 2,
         "about": 2,
         "home": 6,
         "contact": 2,
@@ -65,12 +66,26 @@ export default function Home() {
       // Output the selected configuration
       console.log("Configuration stored in Session Storage:", selectedConfig);
     }
+    const configString = sessionStorage.getItem('config');
+
+    if (configString) {
+      // Parse the config JSON string
+      const config = JSON.parse(configString);
+
+      // Update the variant index based on the 'about' key in the config
+      setVariantIndex(config['home']);
+      console.log(config['home'])
+    }
+    else {
+      setVariantIndex(0)
+    }
   }, []); // Empty dependency array ensures this effect runs only once on component mount
 
   return (
     <>
-      {!completed && <ImageIntro completed={completed} setCompleted={setCompleted} />}
       {completed && variants[variantIndex]}
+      {/* {!completed && <ImageIntro completed={completed} setCompleted={setCompleted} />} */}
+      {!completed && <BindowsInto setCompleted={setCompleted} />}
 
 
       <script src='./js/three.min.js'></script>

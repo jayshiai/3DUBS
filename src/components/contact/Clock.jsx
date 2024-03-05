@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 
-const Clock = () => {
+const Clock = ({ hidden, myseconds }) => {
     useEffect(() => {
         const updateClock = () => {
             const hour = document.getElementById('hour')
@@ -17,15 +17,18 @@ const Clock = () => {
             minute.style.transform = `rotateZ(${min}deg)`
             second.style.transform = `rotateZ(${sec}deg)`
         }
+        let intervalId;
         // Call the updateClock function immediately to initialize the clock
-        updateClock();
+        if (!hidden) {
+            intervalId = setInterval(updateClock, 1000);
+        }
 
 
-        const intervalId = setInterval(updateClock, 1000);
 
         // Clear the interval when the component unmounts
         return () => clearInterval(intervalId);
     }, [])
+
     return (
         <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="clock 1" clip-path="url(#clip0_1_2)">
@@ -124,7 +127,7 @@ const Clock = () => {
                     <path id="Vector_85" d="M68.17 133.82C68.17 133.36 68.51 133.03 69.09 133.03C69.55 133.03 69.95 133.27 69.95 133.69C69.95 133.95 69.81 134.11 69.6 134.21V134.22C69.9 134.31 70.03 134.52 70.03 134.8C70.03 135.28 69.67 135.54 69.11 135.54C68.47 135.54 68.11 135.21 68.11 134.65H68.61C68.61 134.95 68.74 135.12 69.09 135.12C69.39 135.12 69.51 134.99 69.51 134.78C69.51 134.51 69.32 134.43 69.06 134.43H68.9V134.06H69.05C69.27 134.06 69.44 133.96 69.44 133.73C69.44 133.56 69.34 133.44 69.1 133.44C68.83 133.44 68.69 133.58 68.69 133.81H68.17V133.82Z" fill="white" />
                     <path id="Vector_86" d="M70.29 134.29C70.29 133.58 70.61 133.03 71.31 133.03C72.02 133.03 72.33 133.58 72.33 134.29C72.33 135 72.02 135.55 71.31 135.55C70.61 135.55 70.29 135 70.29 134.29ZM71.8 134.29C71.8 133.83 71.69 133.45 71.31 133.45C70.93 133.45 70.82 133.83 70.82 134.29C70.82 134.75 70.93 135.12 71.31 135.12C71.69 135.12 71.8 134.75 71.8 134.29Z" fill="white" />
                 </g>
-                <g id="numbers">
+                <g id="numbers" className={`${hidden ? "opacity-0" : ""}`}>
                     <path id="Vector_87" d="M67.62 25.02V34H66.45V27.28C65.9 27.8 65.38 27.8 64.58 27.8V26.96C66.15 26.96 66.58 26.19 66.71 25.02H67.62Z" fill="white" />
                     <path id="Vector_88" d="M69.3 28.16C69.3 26.3 70.31 24.83 72.54 24.83C74.07 24.83 75.4 25.8 75.4 27.52C75.4 30.6 71.02 30.78 70.46 32.93V32.96H75.27V34H69.04C69.04 32.38 70.07 31.1 71.72 30.14C73.4 29.17 74.23 28.85 74.23 27.54C74.23 26.79 73.89 25.88 72.51 25.88C70.94 25.88 70.47 26.93 70.47 28.17H69.3V28.16Z" fill="white" />
                     <path id="Vector_89" d="M70.36 109.34C72.08 109.34 73.27 110.52 73.27 112.3C73.27 113.96 72.1 115.38 70.15 115.38C67.69 115.38 66.78 113.56 66.78 110.7C66.78 107.71 67.95 106.03 70.19 106.03C71.87 106.03 72.91 107.17 73.04 108.49H71.87C71.75 107.62 71.21 107.07 70.19 107.07C68.33 107.07 67.98 108.84 67.95 110.65V110.68C68.4 109.84 69.31 109.34 70.36 109.34ZM72.11 112.39C72.11 111.1 71.33 110.39 70.26 110.39C68.96 110.39 68.09 111.21 68.09 112.42C68.09 113.58 68.86 114.36 70.16 114.36C71.39 114.35 72.11 113.58 72.11 112.39Z" fill="white" />
@@ -142,14 +145,14 @@ const Clock = () => {
                     <path id="Vector_101" d="M54.66 103L54.2 103.79C51.57 104.26 48.41 106.42 46.97 108.94L45.9 108.32C47.4 105.72 50.9 103.72 53 103.28L53.01 103.26L48.74 100.8L49.26 99.9L54.66 103Z" fill="white" />
                 </g>
                 <g id="clock-hands" className='relative'>
-                    <g id="second" className=' origin-[70px_70px]'>
+                    <g id="second" ref={myseconds} style={{ transformOrigin: "70px 70px" }} className='absolute origin-[70px_70px]'>
                         <path id="Vector_102" d="M70.5 8.99998L69.5 8.99998L69.5 77.0003L70.5 77.0003L70.5 8.99998Z" fill="white" />
                         <path id="Vector_103" d="M70 81C68.62 81 67.5 79.88 67.5 78.5C67.5 77.12 68.62 76 70 76C71.38 76 72.5 77.12 72.5 78.5C72.5 79.88 71.38 81 70 81ZM70 77C69.17 77 68.5 77.67 68.5 78.5C68.5 79.33 69.17 80 70 80C70.83 80 71.5 79.33 71.5 78.5C71.5 77.67 70.83 77 70 77Z" fill="white" />
                     </g>
-                    <g id="minute" className='origin-[70px_70px]'>
+                    <g id="minute" className={`${hidden ? "opacity-0" : ""}  origin-[70px_70px]`}>
                         <path id="Vector_104" d="M70.5 22L71 69.9798H69L69.5 22H70.5Z" fill="white" />
                     </g>
-                    <g id="hour" className='origin-[70px_70px]'>
+                    <g id="hour" className={`${hidden ? "opacity-0" : ""}  origin-[70px_70px]`}>
                         <path id="Vector_105" d="M69.0003 69.9999L69.5003 43L70.5003 43L71.0003 69.9999L69.0003 69.9999Z" fill="white" />
                     </g>
                 </g>

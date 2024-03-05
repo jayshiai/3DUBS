@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import AboutTwo from "@/components/about/AboutTwo";
 import AboutOne from '@/components/about/aboutOne';
+import LogoOverlay from '@/components/LogoOverlay';
 
 const Page = () => {
   // Define your variants
@@ -29,7 +30,6 @@ const Page = () => {
 
   return (
     <div>
-
       {variants[variantIndex]}
     </div>
   );

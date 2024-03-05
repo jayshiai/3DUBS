@@ -11,7 +11,9 @@ export default function RootLayout({ children }) {
       <body
         className={`no-scrollbar grid place-content-center bg-white  overflow-x-hidden  `}
       >
+
         {children}
+
       </body>
     </html>
   );

@@ -4,7 +4,9 @@
 import { useEffect, useState } from 'react';
 import ContactCard from "@/components/contactus/ContactCard"
 import ContactClock from '@/components/contactus/ContactClock';
-
+import { FaArrowLeft } from "react-icons/fa";
+import Link from 'next/link';
+import BackButton from '@/components/BackButton';
 const page = () => {
     // Define your variants
     const variants = [<ContactCard />, <ContactClock />];
@@ -30,6 +32,7 @@ const page = () => {
 
     return (
         <>
+            <BackButton />
             {variants[variantIndex]}
         </>
     )

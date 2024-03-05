@@ -2,7 +2,7 @@ import React from 'react'
 import { FaGithub, FaInstagram } from "react-icons/fa6";
 const ContactCard = () => {
     return (
-        <div className='w-screen h-screen flex justify-center items-center text-white'>
+        <div className='w-screen h-screen fixed top-0 flex justify-center items-center text-white'>
             <div className='relative h-[90%] w-[90%] rounded-3xl shadow-[0_0_60px_20px_rgba(0,0,0,0.5)] flex justify-center items-center bg-black overflow-hidden'>
 
                 <div className='relative flex flex-col gap-4'>

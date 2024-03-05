@@ -1,6 +1,8 @@
 "use client"
 import ParticleTunnel from '@/components/ParticleTunnel';
 import React, { useState, useEffect } from 'react'
+import NavComponent from '../nav/NavComponent';
+import LogoOverlay from '../LogoOverlay';
 
 const HomeTunnelTwo = ({ completed }) => {
     const [mouseDown, setMouseDown] = useState(false);
@@ -26,11 +28,12 @@ const HomeTunnelTwo = ({ completed }) => {
 
     return (
         <>
-            <div onTouchStart={() => setMouseDown(true)} onTouchEnd={() => setMouseDown(false)} onMouseDown={() => setMouseDown(true)} onMouseUp={() => setMouseDown(false)} className={`h-screen w-screen cursor-default select-none ${mouseDown ? "text-white" : "text-black"} flex justify-center items-center text-8xl ave z-10`}>
+            <LogoOverlay />
+            <NavComponent />
+            <ParticleTunnel />
+            <div onTouchStart={() => setMouseDown(true)} onTouchEnd={() => setMouseDown(false)} onMouseDown={() => setMouseDown(true)} onMouseUp={() => setMouseDown(false)} className={`h-screen w-screen fixed top-0 cursor-default select-none ${mouseDown ? "text-white" : "text-black"} flex justify-center items-center text-8xl ave `}>
                 The Three Dubs
             </div>
-            <ParticleTunnel />
-
             <script src='./js/three.min.js'></script>
             <script src='./js/TweenMax.min.js'></script>
 

@@ -1,13 +1,14 @@
 "use client";
 import { motion, stagger } from "framer-motion";
 import { useEffect } from "react";
-const SideNav = ({setColor}) => {
+import Link from "next/link";
+const SideNav = ({ setColorActivate, currentHomeVariant, setColor }) => {
   const events = [
-    { title: "Fun", theme: "#000" },
-    { title: "Exciting", theme: "#9d4edd" },
-    { title: "Mind Blowing", theme: "#29bf12" },
-    { title: "Thrilling", theme: "#fff794" },
-    { title: "Shocking", theme: "#30e7ff" },
+    { title: "Home", theme: "#000", href: "/" },
+    { title: "About", theme: "#9d4edd", href: "/about" },
+    { title: "Projects", theme: "#29bf12", href: "/projects" },
+    { title: "Our Crew", theme: "#fff794", href: "/crew" },
+    { title: "Contact Us", theme: "#30e7ff", href: "/contactus" },
   ];
 
   useEffect(() => {
@@ -19,7 +20,10 @@ const SideNav = ({setColor}) => {
       sidebar_item.style.opacity = 1;
       sidebar_item.firstChild.style.backgroundColor =
         sidebar_item.dataset.color;
-      setColor(sidebar_item.dataset.color);
+      if (setColorActivate) {
+
+        setColor(sidebar_item.dataset.color);
+      }
       sidebar_items.forEach((item) => {
         if (item != sidebar_item) {
           item.style.opacity = 0.4;
@@ -120,9 +124,9 @@ const SideNav = ({setColor}) => {
             },
           },
         }}
-        className="sidebar_text "
+        className="sidebar_text  "
       >
-        <h1>{event.title}</h1>
+        <Link href={event.href} className={`${currentHomeVariant == 1 || currentHomeVariant == 4 ? "text-black hover:text-black" : "text-white hover:text-white"} `}>{event.title}</Link>
       </motion.div>
     </div>
   ));
@@ -132,7 +136,7 @@ const SideNav = ({setColor}) => {
       animate="invisible"
       whileHover="visible"
       exit="invisible"
-      className="sidebar z-[100] fixed flex flex-col items-end w-[35px] text-base font-mono font-black tracking-widest   top-1/2  py-4 right-6 text-right  translate-y-[-50%] cursor-default uppercase"
+      className="sidebar z-10 fixed flex flex-col items-end w-[35px] text-base font-mono font-black tracking-widest   top-1/2  py-4 right-6 text-right  translate-y-[-50%] cursor-default uppercase"
     >
       {elements}
     </motion.div>

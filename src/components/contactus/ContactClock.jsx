@@ -3,7 +3,7 @@ import { CiGlobe } from "react-icons/ci";
 import { PiArrowArcLeftThin } from "react-icons/pi";
 const ContactClock = () => {
     return (
-        <div className='h-screen w-screen bg-black text-white overflow-hidden'>
+        <div className='h-screen w-screen fixed top-0 bg-black text-white overflow-hidden'>
             <div className="w-full h-2/3 lg:h-1/2 flex lg:flex-row flex-col">
                 <div className="w-full lg:w-1/2 h-full p-8 font-medium tracking-tighter flex flex-col gap-8 montserrat">
                     <div className="text-2xl uppercase ">Get In Touch</div>

@@ -1,4 +1,5 @@
 "use client"
+import BackButton from "@/components/BackButton";
 import GLTextTorus from "@/components/GL/GLTextTorus";
 import IndividualAbout from "@/components/IndividualAbout";
 import LocomotiveScroll from 'locomotive-scroll';
@@ -8,6 +9,7 @@ const page = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
+      <BackButton />
       <div className="h-screen w-screen fixed top-0 left-0 -z-10">
         <GLTextTorus />
       </div>

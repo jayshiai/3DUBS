@@ -1,6 +1,8 @@
 "use client"
 import TraingleTunnel from '@/components/TriangleTunnel';
 import React, { useState, useEffect } from 'react'
+import LogoOverlay from '../LogoOverlay'
+import NavComponent from '../nav/NavComponent';
 
 const HomeTunnelOne = ({ completed }) => {
     const [mouseDown, setMouseDown] = useState(false);
@@ -26,11 +28,13 @@ const HomeTunnelOne = ({ completed }) => {
 
     return (
         <>
-            <div onTouchStart={() => setMouseDown(true)} onTouchEnd={() => setMouseDown(false)} onMouseDown={() => setMouseDown(true)} onMouseUp={() => setMouseDown(false)} className={`h-screen w-screen cursor-default select-none ${mouseDown ? "text-white" : "text-black"} flex justify-center items-center text-8xl ave z-10`}>
+            <LogoOverlay />
+            <NavComponent />
+
+            <TraingleTunnel />
+            <div onTouchStart={() => setMouseDown(true)} onTouchEnd={() => setMouseDown(false)} onMouseDown={() => setMouseDown(true)} onMouseUp={() => setMouseDown(false)} className={`h-screen w-screen fixed top-0 cursor-default select-none ${mouseDown ? "text-white" : "text-black"} flex justify-center items-center text-8xl ave `}>
                 The Three Dubs
             </div>
-            <TraingleTunnel />
-
             {/* <ParticleTunnel /> */}
         </>
     )

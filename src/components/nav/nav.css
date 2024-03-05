@@ -22,6 +22,21 @@ main::before {
     position: fixed;
     top: -100%;
     width: 300%;
+    scale: 1;
+}
+
+
+#noise {
+    animation: grain 8s steps(10) infinite;
+    background-image: url(/noise.png);
+    content: '';
+    height: 300%;
+    left: -50%;
+    opacity: 0.6;
+    position: fixed;
+    top: -100%;
+    width: 300%;
+    scale: 1;
 }
 
 @keyframes grain {

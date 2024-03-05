@@ -1,7 +1,10 @@
+import BackButton from "@/components/BackButton";
 import GLTextTwister from "@/components/GL/GLTextTwister";
+
 const page = () => {
   return (
     <>
+      <BackButton />
       <div className="h-screen w-screen fixed top-0 left-0 -z-10">
         <GLTextTwister />
       </div>

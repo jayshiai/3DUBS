@@ -5,6 +5,8 @@ import React, { useEffect } from 'react'
 import { Canvas } from 'react-three-fiber'
 import * as THREE from "three";
 import { useSearchParams } from 'next/navigation'
+import LogoOverlay from '../LogoOverlay'
+import NavComponent from '../nav/NavComponent'
 
 
 const HomeTerrain = ({ completed }) => {
@@ -37,7 +39,9 @@ const HomeTerrain = ({ completed }) => {
     const fogColor = [0xffffff, 0x000000, 0x333333]
     return (
         <>
-            <div className='h-screen w-screen absolute top-0 left-0 -z-10'>
+            <LogoOverlay />
+            <NavComponent />
+            <div className='h-screen w-screen fixed top-0 left-0 -z-10'>
                 <Canvas
                     gl={{ antialias: true }}
                     onCreated={({ scene }) => {
@@ -55,7 +59,7 @@ const HomeTerrain = ({ completed }) => {
                     <TerrainCanvas dayTime={dayTime} />
                 </Canvas>
             </div>
-            <div className={`h-screen w-screen flex justify-center items-center ave text-8xl ${dayTime == 0 ? 'text-black' : 'text-white'} cursor-default select-none`}>
+            <div className={`h-screen w-screen fixed top-0 left-0 flex justify-center items-center ave text-8xl ${dayTime == 0 ? 'text-black' : 'text-white'} cursor-default select-none`}>
 
                 The Three Dubs
             </div>

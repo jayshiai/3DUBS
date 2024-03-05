@@ -9,6 +9,12 @@
 /* @layer utilities {
  
 } */
+@layer components {
+  .text-repeat {
+    @apply absolute uppercase tracking-widest bg-white leading-[0.75]
+  }
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 * ::-webkit-scrollbar {
   display: none;
@@ -20,6 +26,14 @@
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+@font-face {
+  font-family: 'Overused Grotesk';
+  src:
+    url('/fonts/OverusedGrotesk-VF.woff2') format('woff2 supports variations'),
+    url('/fonts/OverusedGrotesk-VF.woff2') format('woff2-variations');
+  font-weight: 300 900;
 }
 
 .rubik {
@@ -37,6 +51,11 @@
 
 .ave {
   font-family: "Sedgwick Ave Display", cursive;
+}
+
+.grotesk {
+  font-family: 'Overused Grotesk', sans-serif;
+
 }
 
 .sacramento {
