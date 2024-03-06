@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 const combinations = [
   { configuration: 1, roundness: 1 },
@@ -68,51 +69,51 @@ const ZenEvents = () => {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <div className="shape flex justify-center items-center">
+        <Link href={"/crew"} className="shape  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#b0bec5] rounded-[inherit]"
           ></motion.div>
-        </div>
-        <div className="shape flex justify-center items-center">
+        </Link>
+        <Link href={"/about"} className="shape flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#f5f5f5] rounded-[inherit]"
           ></motion.div>
-        </div>
-        <div className="shape flex justify-center items-center">
+        </Link>
+        <Link href={"/jayvardhan"} className="shape flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#9b5de5] rounded-[inherit]"
           ></motion.div>
-        </div>
-        <div className="shape flex justify-center items-center">
+        </Link>
+        <Link href={"/contactus"} className="shape flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#f15bb5] rounded-[inherit]"
           ></motion.div>
-        </div>
-        <div className="shape flex justify-center items-center">
+        </Link>
+        <Link href={"/projects"} className="shape flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#fee440] rounded-[inherit]"
           ></motion.div>
-        </div>
-        <div className="shape flex justify-center items-center">
+        </Link>
+        <Link href={"/kunal"} className="shape flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#00bbf9] rounded-[inherit]"
           ></motion.div>
-        </div>
-        <div className="shape flex justify-center items-center">
+        </Link>
+        <Link href={"/aryan"} className="shape flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#00f5d4] rounded-[inherit]"
           ></motion.div>
-        </div>
+        </Link>
       </motion.div>
 
-      <div className="h-fit overflow-hidden absolute text-[20vmin] cursor-default ave   w-screen text-center">
+      <div className="h-fit overflow-hidden absolute text-[20vmin] cursor-default ave pointer-events-none   w-screen text-center">
         <motion.p
           className="p-0 m-0"
           variants={textVariant}
@@ -124,7 +125,7 @@ const ZenEvents = () => {
         </motion.p>
       </div>
 
-      <div className="h-fit overflow-hidden absolute text-[20vmin] cursor-default ave z-10 mix-blend-difference text-stroke   w-screen text-center">
+      <div className="h-fit overflow-hidden absolute text-[20vmin] cursor-default ave z-10 pointer-events-none mix-blend-difference text-stroke   w-screen text-center">
         <motion.p
           className="p-0 m-0"
           variants={textVariant}

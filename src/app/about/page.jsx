@@ -10,23 +10,45 @@ const Page = () => {
 
   // State to hold the selected variant index
   const [variantIndex, setVariantIndex] = useState();
-
+  let config;
+  const handleResize = () => {
+    // Check viewport width on resize
+    if (window.innerWidth < 1080) {
+      setVariantIndex(0); // Set variantIndex to 1 if width < 700 or not desktop
+    }
+    else {
+      setVariantIndex(config['about']);
+    }
+  };
   useEffect(() => {
     // Check if config exists in Session Storage
     const configString = sessionStorage.getItem('config');
 
     if (configString) {
       // Parse the config JSON string
-      const config = JSON.parse(configString);
+      config = JSON.parse(configString);
 
       // Update the variant index based on the 'about' key in the config
-      setVariantIndex(config['about']);
-      console.log(config['about'])
+      // Check viewport width
+      if (window.innerWidth < 1080) {
+        setVariantIndex(0); // Set variantIndex to 1 if width < 700 or not desktop
+      } else {
+        setVariantIndex(config['about']); // Set variant index from config
+      }
+
     }
     else {
       setVariantIndex(0)
     }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []); // Empty dependency array ensures this effect runs only once on component mount
+
+
 
   return (
     <div>

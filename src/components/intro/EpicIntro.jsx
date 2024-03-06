@@ -189,7 +189,7 @@ const EpicIntro = ({ setCompleted }) => {
         <>
             {animation == 1 && (
                 <div className='h-screen w-screen raleway  flex justify-center items-center'>
-                    {clock && (<div ref={myClock} className='absolute  w-[400px] '><Clock hidden={true} myseconds={myseconds} /></div>)}
+                    {clock && (<div ref={myClock} className='absolute  w-[40%] '><Clock hidden={true} myseconds={myseconds} /></div>)}
                     <div ref={changingText} className={`z-50 ${clock ? "text-white" : "text-black"} bg-transparent text-repeat text-[10vw] `}>0</div>
                     <div ref={backdropText} className='absolute text-[10vw]'></div>
                 </div>

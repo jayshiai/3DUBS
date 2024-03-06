@@ -80,6 +80,41 @@
   -webkit-text-stroke: 1px rgb(150, 150, 150);
 }
 
+.eventCard {
+
+
+  position: relative;
+
+  transform-style: preserve-3d;
+  transform: perspective(700px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
+
+
+.transBg {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(to right,
+      var(--c1),
+      var(--c2),
+      var(--c3),
+      var(--c1));
+  background-size: 200%;
+}
+
+.transText {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
 #wrapper {
   aspect-ratio: 1.618;
   width: 95vmin;

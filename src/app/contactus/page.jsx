@@ -32,7 +32,7 @@ const page = () => {
 
     return (
         <>
-            <BackButton />
+
             {variants[variantIndex]}
         </>
     )
