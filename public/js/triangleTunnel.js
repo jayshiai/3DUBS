@@ -87,7 +87,23 @@ Tunnel.prototype.handleEvents = function () {
     this.onMouseMove.bind(this),
     false
   );
+  document.body.addEventListener('touchstart', this.onMouseDown.bind(this), false);
+  document.body.addEventListener('mousedown', this.onMouseDown.bind(this), false);
+
+  document.body.addEventListener('mouseup', this.onMouseUp.bind(this), false);
+  document.body.addEventListener('mouseleave', this.onMouseUp.bind(this), false);
+  document.body.addEventListener('touchend', this.onMouseUp.bind(this), false);
 };
+
+Tunnel.prototype.onMouseDown = function () {
+  this.mousedown = true;
+
+};
+Tunnel.prototype.onMouseUp = function () {
+  this.mousedown = false;
+
+};
+
 
 Tunnel.prototype.onResize = function () {
   ww = window.innerWidth;
@@ -149,13 +165,14 @@ Tunnel.prototype.updateCurve = function (delta) {
   var index = 0;
   var vertice_o = null;
   var vertice = null;
+  var deltaModifier = this.mousedown ? 0.0005 : 0.001;
   for (i = 0; i < this.tubeGeometry.vertices.length; i += 1) {
     vertice_o = this.tubeGeometry_o.vertices[i];
     vertice = this.tubeGeometry.vertices[i];
     index = Math.floor(i / 120);
     vertice.x += ((vertice_o.x + this.splineMesh.geometry.vertices[index].x) - vertice.x) / 15;
     vertice.y += ((vertice_o.y + this.splineMesh.geometry.vertices[index].y) - vertice.y) / 15;
-    vertice.applyAxisAngle(new THREE.Vector3(0, 0, 1), Math.abs(Math.cos(delta * 0.001 + vertice.z * 5)) * 0.1);
+    vertice.applyAxisAngle(new THREE.Vector3(0, 0, 1), Math.abs(Math.cos(delta * deltaModifier + vertice.z * 5)) * 0.1);
   }
   this.tubeGeometry.verticesNeedUpdate = true;
 
@@ -173,10 +190,18 @@ Tunnel.prototype.updateCurve = function (delta) {
   for (var i = 0; i < this.tubeGeometry.faces.length; i++) {
     f = this.tubeGeometry.faces[i];
     p = this.tubeGeometry.vertices[f.a];
-    h = (Math.floor(Math.abs(noise.simplex3(p.x * 2, p.y * 4, p.z * 2 + delta)) * 80 * 100) * 0.01 + 180) / 360;
-    rgb = hslToRgb(h, 0.7, 0.6)
-    color = new THREE.Color(rgb[0], rgb[1], rgb[2]);
-    f.color = color;
+    if (this.mousedown) {
+      h = (Math.floor(Math.abs(noise.simplex3(p.x * 2, p.y * 4, p.z * 2 + delta)) * 80 * 360) * 0.01 + 180) / 360;
+      rgb = hslToRgb(h, 0.7, 0.6)
+      color = new THREE.Color(rgb[0], rgb[1], rgb[2]);
+      f.color = color;
+    }
+    else {
+      h = (Math.floor(Math.abs(noise.simplex3(p.x * 2, p.y * 4, p.z * 2 + delta)) * 80 * 100) * 0.01 + 180) / 360;
+      rgb = hslToRgb(h, 0.7, 0.6)
+      color = new THREE.Color(rgb[0], rgb[1], rgb[2]);
+      f.color = color;
+    }
   }
   this.tubeGeometry.elementsNeedUpdate = true;
 };

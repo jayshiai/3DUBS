@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import "./bindowsIntro.css"
-const BindowsInto = ({ setCompleted }) => {
+const BindowsIntro = ({ setCompleted }) => {
     const [showIntro, setShowIntro] = useState(true);
 
     useEffect(() => {
@@ -36,4 +36,4 @@ const BindowsInto = ({ setCompleted }) => {
     )
 }
 
-export default BindowsInto
+export default BindowsIntro

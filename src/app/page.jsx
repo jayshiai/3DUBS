@@ -9,12 +9,16 @@ import HomeTerrain from "@/components/home/HomeTerrain";
 import HomeTunnelOne from "@/components/home/HomeTunnelOne";
 import HomeTunnelTwo from "@/components/home/HomeTunnelTwo";
 import Bindows from "@/components/home/Bindows";
-import BindowsInto from "@/components/intro/BindowsIntro";
+import BindowsIntro from "@/components/intro/BindowsIntro";
+import EpicIntro from "@/components/intro/EpicIntro";
 
 
 
 function hasConfigInSessionStorage() {
   return !!sessionStorage.getItem('config');
+}
+function hasIntroCompleted() {
+  return !!sessionStorage.getItem('introCompleted');
 }
 
 
@@ -22,12 +26,20 @@ export default function Home() {
 
   const [completed, setCompleted] = useState(false);
   const variants = [<HomeZen />, <HomeCircle />, <HomeTerrain />, <HomeTunnelOne />, <HomeTunnelTwo />, <Bindows />];
+  const introVariants = [<ImageIntro completed={completed} setCompleted={setCompleted} />, <EpicIntro setCompleted={setCompleted} />, <BindowsIntro setCompleted={setCompleted} />];
   // State to hold the selected variant index
   const [variantIndex, setVariantIndex] = useState();
-
+  const [introVariantIndex, setIntroVariantIndex] = useState(0);
 
 
   useEffect(() => {
+    if (!hasIntroCompleted()) {
+      setIntroVariantIndex(0); // Set intro variant index to 0 if intro is not completed
+    } else {
+      setIntroVariantIndex(-1); // Set intro variant index to -1 to skip intro if already completed
+      setCompleted(true); // Set completed to true if intro is already completed
+    }
+
     // Check if the configuration already exists in Session Storage
     if (!hasConfigInSessionStorage()) {
       // Define your list of items with their variants
@@ -74,19 +86,28 @@ export default function Home() {
 
       // Update the variant index based on the 'about' key in the config
       setVariantIndex(config['home']);
-      console.log(config['home'])
+      if (config['home'] != 5) {
+        setIntroVariantIndex(config['intro']);
+      }
+      else {
+        setIntroVariantIndex(2);
+      }
     }
     else {
       setVariantIndex(0)
+      setIntroVariantIndex(0);
     }
   }, []); // Empty dependency array ensures this effect runs only once on component mount
+  useEffect(() => {
+    if (completed) {
+      sessionStorage.setItem('introCompleted', true); // Mark intro as completed in session storage
+    }
+  }, [completed]);
 
   return (
     <>
       {completed && variants[variantIndex]}
-      {/* {!completed && <ImageIntro completed={completed} setCompleted={setCompleted} />} */}
-      {!completed && <BindowsInto setCompleted={setCompleted} />}
-
+      {!completed && introVariantIndex !== -1 && introVariants[introVariantIndex]}
 
       <script src='./js/three.min.js'></script>
       <script src='./js/perlin.js'></script>
