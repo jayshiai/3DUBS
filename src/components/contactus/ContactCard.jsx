@@ -72,8 +72,8 @@ const ContactCard = () => {
                     <div className='absolute z-50 top-10 right-8 md:right-16'>
 
                         <div className='flex gap-4'>
-                            <Link href={"/about"}><FaInstagram className='ext-2xl md:text-3xl cursor-pointer hover:scale-110 hover:translate-x-2 hover:-translate-y-2 trasition-all duration-500' /></Link>
-                            <Link href={"/about"}><FaGithub className='ext-2xl md:text-3xl cursor-pointer hover:scale-110 hover:translate-x-2 hover:-translate-y-2 trasition-all duration-500' /></Link>
+                            <Link aria-label="instagram" href={"/about"}><FaInstagram className='ext-2xl md:text-3xl cursor-pointer hover:scale-110 hover:translate-x-2 hover:-translate-y-2 trasition-all duration-500' /></Link>
+                            <Link aria-label="github" href={"/about"}><FaGithub className='ext-2xl md:text-3xl cursor-pointer hover:scale-110 hover:translate-x-2 hover:-translate-y-2 trasition-all duration-500' /></Link>
                         </div>
                     </div>
 

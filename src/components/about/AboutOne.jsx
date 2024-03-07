@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import LocomotiveScroll from 'locomotive-scroll';
 import { useRouter } from 'next/navigation'
 import BackButton from '../BackButton'
 
@@ -29,8 +28,20 @@ const AboutOne = () => {
     const [tomorrowState, setTomorrowState] = useState('initial')
     // Function to generate a random vibrant color
 
+    useEffect(() => {
+        let scroll;
+        import("locomotive-scroll").then((locomotiveModule) => {
+            scroll = new locomotiveModule.default();
+        });
 
-    const locomotiveScroll = new LocomotiveScroll();
+        return () => {
+            if (scroll) {
+                console.log("yamete")
+                scroll.destroy()
+            }
+        };
+    }, []);
+
     const generateRandomColor = () => {
         const letters = '0123456789ABCDEF';
         let color = '#';
@@ -250,8 +261,8 @@ const AboutOne = () => {
             <div className='h-[calc(100vh-80px)] w-screen border-y grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 my-10   '>
                 <div className='flex flex-col  border-r '>
                     <section className='h-auto flex flex-col bg-white'>
-                        <div className='w-full  flex  items-end border-b px-4 text-4xl lg:text-5xl xl:text-7xl uppercase raleway bg-white'>
-                            <AnimatedTextCharacter text="The Three Dubs," delay={0} stagger={0.05} yOffset={"80vh"} />
+                        <div className='w-full  flex  items-end border-b px-4 text-4xl lg:text-5xl xl:text-7xl uppercase raleway bg-white '>
+                            <AnimatedTextCharacter text="The Three Dubs," delay={0} stagger={0.05} yOffset={50} />
                         </div>
                         <div className='w-full px-4 border-b texl-xl xl:text-2xl lowercase rockSalt text-right bg-white'>
                             <AnimatedTextCharacter text="The Web Dev Wing under ->" delay={1} stagger={0.025} yOffset={50} />
@@ -301,7 +312,7 @@ const AboutOne = () => {
 
                     <div className='h-full md:h-1/2 bg-white z-0 text-right raleway'>
                         <div className='w-full h-[15%] flex items-center border-y px-4 text-4xl  uppercase '>
-                            <AnimatedTextCharacter text="Members" delay={0} stagger={0.05} yOffset={"80vh"} />
+                            <AnimatedTextCharacter text="Members" delay={0} stagger={0.05} yOffset={50} />
                         </div>
                         <div onClick={() => router.push("/jayvardhan")} className='w-full min-h-[20%] border-b'>
                             <motion.div
@@ -357,7 +368,7 @@ const AboutOne = () => {
                             </motion.div>
                         </div>
                         <div className='w-full  relative h-[25%]'>
-                            <Image fill={true} src={"/assets/stripes.png"} className='opacity-10 object-cover' />
+                            <Image draggable={false} fill={true} src={"/assets/stripes.png"} className='select-{none} opacity-10 object-cover' />
                         </div>
                     </div>
 
@@ -425,7 +436,7 @@ const AboutOne = () => {
                 <div ref={handRef} className='relative flex items-end justify-center w-screen  h-screen'>
 
 
-                    <Image fill={true} src={"/assets/hand.png"} className=' -z-10 translate-y-[10%] md:translate-y-0 object-contain' />
+                    <Image draggable={false} fill={true} src={"/assets/hand.png"} className='select-none -z-10 translate-y-[10%] md:translate-y-0 object-contain' />
                 </div>
 
             </div>
@@ -437,15 +448,15 @@ const AboutOne = () => {
 
                 <div className='h-[200vh] w-screen flex overflow-hidden'>
                     <div ref={adamsHandRef} className=' relative h-screen -translate-x-[100%]  w-[50vw]'>
-                        <Image fill={true} src={"/assets/adams_hand.webp"} className='object-contain ' />
+                        <Image draggable={false} fill={true} src={"/assets/adams_hand.webp"} className=' select-none object-contain ' />
                     </div>
 
                     <div ref={godsHandRef} className=' relative h-screen translate-x-[100%]  w-[50vw]'>
-                        <Image fill={true} src={"/assets/gods_hand.webp"} className=' object-contain ' />
+                        <Image draggable={false} fill={true} src={"/assets/gods_hand.webp"} className='select-none object-contain ' />
                     </div>
                     <div ref={roseRef} className=' h-screen w-screen flex justify-center items-center scale-0 absolute -z-10'>
                         <div className='relative h-1/2 w-1/2'>
-                            <Image fill={true} src={"/assets/rose.png"} className=' object-contain' />
+                            <Image draggable={false} fill={true} src={"/assets/rose.png"} className='select-none object-contain' />
                         </div>
                     </div>
                 </div>

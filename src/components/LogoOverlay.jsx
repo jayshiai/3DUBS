@@ -49,16 +49,21 @@ const LogoOverlay = () => {
             className={`${expanded ? "pointer-events-auto" : "pointer-events-none"}  cursor-default fixed top-0 left-0 h-screen w-screen flex flex-col md:grid grid-cols-4 grid-rows-[40%_60%] z-20 text-white p-8`}>
 
             <div
+                style={{
+                    "--c1": "#AAAAAA",
+                    "--c2": "#FFFFFF",
+                    "--c3": "#555555",
+                }}
                 onClick={() => setExpanded(!expanded)}
-                id='logo' className='h-[80px] w-[80px] absolute top-0 left-0 text-xl flex justify-center items-center ave pointer-events-auto cursor-crosshair'>3DUBS</div>
+                id='logo' className='transText transBg delay-500 h-[80px] w-[80px] absolute top-0 left-0 text-xl flex justify-center items-center ave pointer-events-auto cursor-crosshair'>3DUBS</div>
             <div></div>
             <motion.div
 
                 variants={item}
                 id='philosophy' className=' hidden md:block  text-right text-xs tracking-normal leading-4 font-mono '>
                 <div className='font-mono font-bold tracking-widest text-xl'> <span className=''>{'>> '}</span> philosophy <span className=''>{' <<'}</span></div>
-                <p className='mt-3'>Banjo ethical readymade, microdosing subway tile pinterest glossier put a bird on it retro direct trade blog tumeric wayfarers mustache</p>
-                <p className='mt-3'>Thundercats hella sartorial occupy portland DIY raclette mlkshk poke DIY chambray franzen tattooed thundercats master</p>
+                <p className='mt-3'>We try to strive for excellence and grasp eminence through grit and grace. Our motto - मम कार्यं मम स्तुतिः।</p>
+                <p className='mt-3'>We believe that, it is only cooperation and collaboration that can drive true growth. Ad astra, per aspera.</p>
             </motion.div>
             <div></div>
             <motion.div
@@ -66,7 +71,7 @@ const LogoOverlay = () => {
                 variants={item}
                 id='about' className='mt-8 md:mt-0 text-center  md:text-right text-xs tracking-normal leading-4 font-mono '>
                 <div className='hidden md:block font-mono font-bold tracking-widest text-xl'> <span className=''>{'>> '}</span> about <span className=''>{' <<'}</span></div>
-                <p className='mt-3'>We are a quadruple award winning hyper active super duper cryptocurrency consultation and technology assessment firm that will help you understand what's going on in the present and future of finances</p>
+                <p className='mt-3'>We are the WebDev wing under <span className='grotesk font-bold'>DevsTomorrow</span>, focused on fostering creative and innovative individuals to promote learning and collaboration while creating meaningful experiences and tools.</p>
 
             </motion.div>
             <motion.div
@@ -80,9 +85,15 @@ const LogoOverlay = () => {
                 variants={item}
                 id='intro' className='mt-16 md:mt-0 h-[50vh] flex flex-col text-right  justify-between '>
                 <div >
-                    <div className='ave text-5xl'>The Three Dubs</div>
-                    <div className='font-bold font-mono leading-4'>A next gen team </div>
-                    <div className=' font-mono leading-4    '>of enthusiastic devs</div>
+                    <div
+                        style={{
+                            "--c1": "#AAAAAA",
+                            "--c2": "#FFFFFF",
+                            "--c3": "#555555",
+                        }}
+                        className='transText transBg  ave text-5xl'>The Three Dubs</div>
+                    <div className='font-bold font-mono leading-4'>A DevsTomorrow</div>
+                    <div className=' font-mono leading-4    '>initiative</div>
                 </div>
                 <div onClick={() => setExpanded(false)} className='text-center md:text-right font-mono font-thin text-red-600 cursor-not-allowed'>close</div>
             </motion.div>
@@ -91,7 +102,7 @@ const LogoOverlay = () => {
 
                 variants={item}
                 id='socials' className='flex flex-col justify-between text-right font-mono'>
-                <div className='' style={{ writingMode: "vertical-rl" }}>9529 Vernon Court, New York, NY 10027</div>
+                <div className='' style={{ writingMode: "vertical-rl" }}>R433.F4, Hostel, IIIT Nagpur, 441108 </div>
                 <div className='flex justify-center md:justify-end'>
                     <div className='block md:hidden'>github</div>
                     <div className='ml-5'>instgram</div>

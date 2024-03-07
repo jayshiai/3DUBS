@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect } from 'react'
-
 const Clock = ({ hidden, myseconds }) => {
     useEffect(() => {
         const updateClock = () => {

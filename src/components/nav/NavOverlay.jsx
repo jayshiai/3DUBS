@@ -3,7 +3,7 @@ import { motion, useAnimate } from 'framer-motion'
 import "./nav.css"
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from 'next/link';
-const LogoOverlay = ({ repeat }) => {
+const NavOverlay = ({ activate, repeat }) => {
     const [scope, animate] = useAnimate()
     const [expanded, setExpanded] = useState(false);
 
@@ -46,7 +46,8 @@ const LogoOverlay = ({ repeat }) => {
 
     return (
         <>
-            <div onClick={() => setExpanded(!expanded)} className='z-50 fixed h-[80px] w-[80px] text-4xl flex justify-center items-center top-0 right-0'>
+
+            <div onClick={() => setExpanded(!expanded)} className={`${activate ? "-translate-y-[100px] " : ""}  duration-500 transition-all  z-50 fixed h-[80px] w-[80px] text-4xl flex justify-center items-center top-0 right-0`}>
                 <RxHamburgerMenu />
             </div>
             <motion.main
@@ -208,8 +209,12 @@ const LogoOverlay = ({ repeat }) => {
             </motion.main>
             <div
                 ref={scope}
-
-                className='h-[80px] w-[80px] fixed top-0 right-0  origin-top-left bg-[#f8ecde] z-10 overflow-hidden'
+                style={{
+                    transform: activate ? `scaleY(1) scaleX(1) translateY(-100px)` : `scaleY(1) scaleX(1)`,
+                    transitionDuration: '0.5s',
+                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                }}
+                className={` h-[80px] w-[80px] fixed top-0 right-0  origin-top-left bg-[#f8ecde] z-10 overflow-hidden`}
             >
 
 
@@ -218,4 +223,4 @@ const LogoOverlay = ({ repeat }) => {
     )
 
 }
-export default LogoOverlay
+export default NavOverlay
