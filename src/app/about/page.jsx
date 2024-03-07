@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import AboutTwo from "@/components/about/AboutTwo";
 import AboutOne from '@/components/about/AboutOne';
-import LogoOverlay from '@/components/LogoOverlay';
 
 const Page = () => {
   // Define your variants
