@@ -73,6 +73,9 @@ const ProjectGrid = () => {
                     <p className=' tracking-tighter font-mono mt-4'> - Most are just Random Pics </p>
                     <p className=' tracking-tighter font-mono'> - You know, for asthetic reasons </p>
                 </div>
+                <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} hidden  transition-all duration-500 delay-200 p-2 row-start-5 col-start-2 rockSalt text-3xl lg:flex justify-center items-end `}>
+                    Infinite Scroll
+                </div>
                 <div ref={el => projectRefs.current[0] = el} onClick={() => handleClick(0)} className=''><ProjectGridImage activate={activate} src={"/projects/1.jpg"} /></div>
                 <div ref={el => projectRefs.current[1] = el} onClick={() => handleClick(1)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/2.jpg"} /></div>
                 <div ref={el => projectRefs.current[2] = el} onClick={() => handleClick(2)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/3.jpg"} /></div>
@@ -84,7 +87,7 @@ const ProjectGrid = () => {
                 <div ref={el => projectRefs.current[8] = el} onClick={() => handleClick(8)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/9.jpg"} /></div>
                 <div ref={el => projectRefs.current[9] = el} onClick={() => handleClick(9)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/10.jpg"} /></div>
             </div>
-            <div className='w-screen  p-2 gap-4    grid grid-cols-2 lg:grid-cols-4 auto-rows-[32vmin]   '>
+            <div className='w-screen  p-2 gap-4    grid grid-cols-2 lg:grid-cols-4 auto-rows-[30vmin]   '>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-2 ave text-3xl flex items-end`}>
                     The Three Dubs
                 </div>
@@ -92,6 +95,9 @@ const ProjectGrid = () => {
                     <p className=' ave text-3xl '>Projects / Work</p>
                     <p className=' tracking-tighter font-mono mt-4'> - Most are just Random Pics </p>
                     <p className=' tracking-tighter font-mono'> - You know, for asthetic reasons </p>
+                </div>
+                <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} hidden transition-all duration-500 delay-200 p-2 row-start-4 col-start-2 rockSalt text-3xl lg:flex justify-center `}>
+                    Infinite Scroll
                 </div>
                 <div ref={el => projectRefs.current[10] = el} onClick={() => handleClick(10)} className=''><ProjectGridImage activate={activate} src={"/projects/1.jpg"} /></div>
                 <div ref={el => projectRefs.current[11] = el} onClick={() => handleClick(11)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/2.jpg"} /></div>
@@ -105,7 +111,7 @@ const ProjectGrid = () => {
                 <div ref={el => projectRefs.current[19] = el} onClick={() => handleClick(19)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/10.jpg"} /></div>
             </div>
             {activate && (
-                <ProjectInfo handleClick={handleClick} index={index} />
+                <ProjectInfo handleClick={handleClick} index={index} setIndex={setIndex} projectRefs={projectRefs} />
             )}
         </>
     )
