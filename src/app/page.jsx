@@ -26,7 +26,7 @@ export default function Home() {
 
   const [completed, setCompleted] = useState(false);
   const variants = [<HomeZen key={0} />, <HomeCircle key={1} />, <HomeTerrain key={2} />, <HomeTunnelOne key={3} />, <HomeTunnelTwo key={4} />, <Bindows key={5} />];
-  const introVariants = [<ImageIntro completed={completed} setCompleted={setCompleted} />, <EpicIntro setCompleted={setCompleted} />, <BindowsIntro setCompleted={setCompleted} />];
+  const introVariants = [<ImageIntro key={0} completed={completed} setCompleted={setCompleted} />, <EpicIntro key={1} setCompleted={setCompleted} />, <BindowsIntro key={2} setCompleted={setCompleted} />];
   // State to hold the selected variant index
   const [variantIndex, setVariantIndex] = useState();
   const [introVariantIndex, setIntroVariantIndex] = useState(0);
