@@ -136,6 +136,7 @@ const page = () => {
             document.body.removeChild(script);
         };
     }, []);
+
     return (
         <div>
             <div class="content">

@@ -4,12 +4,10 @@
 import { useEffect, useState } from 'react';
 import ContactCard from "@/components/contactus/ContactCard"
 import ContactClock from '@/components/contactus/ContactClock';
-import { FaArrowLeft } from "react-icons/fa";
-import Link from 'next/link';
-import BackButton from '@/components/BackButton';
+
 const page = () => {
     // Define your variants
-    const variants = [<ContactCard />, <ContactClock />];
+    const variants = [<ContactCard key={0} />, <ContactClock key={1} />];
 
     // State to hold the selected variant index
     const [variantIndex, setVariantIndex] = useState();

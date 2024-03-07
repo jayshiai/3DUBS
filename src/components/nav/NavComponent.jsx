@@ -6,7 +6,7 @@ const NavComponent = () => {
     const [variantIndex, setVariantIndex] = useState(null); // Set default index to 0
     const [variantHomeIndex, setVariantHomeIndex] = useState(0); // Set default home index to 0
 
-    const variants = [<NavOverlay />, <SideNav currentHomeVariant={variantHomeIndex} />];
+    const variants = [<NavOverlay key={0} />, <SideNav key={1} currentHomeVariant={variantHomeIndex} />];
     let config;
     useEffect(() => {
         const configString = sessionStorage.getItem('config');

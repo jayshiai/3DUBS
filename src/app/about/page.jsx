@@ -6,7 +6,7 @@ import LogoOverlay from '@/components/LogoOverlay';
 
 const Page = () => {
   // Define your variants
-  const variants = [<AboutOne />, <AboutTwo />];
+  const variants = [<AboutOne key={0} />, <AboutTwo key={1} />];
 
   // State to hold the selected variant index
   const [variantIndex, setVariantIndex] = useState();

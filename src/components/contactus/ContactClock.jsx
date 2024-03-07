@@ -21,7 +21,7 @@ const ContactClock = () => {
                             <Clock />
                         </motion.div>
                         <div className="text-2xl lg:text-3xl flex flex-col justify-center montserrat tracking-tighter ">
-                            <p className="z-50 leading-none">HOURS: 6pm - 9am<br /><span className="text-lg lg:text-xl italic">We're always up for a chat</span></p>
+                            <p className="z-50 leading-none">HOURS: 6pm - 9am<br /><span className="text-lg lg:text-xl italic">We&apos;re always up for a chat</span></p>
                             <PiArrowArcLeftThin className="-z-10 text-4xl lg:text-8xl -rotate-90" />
                             <p className="z-50">Indian Standard Time</p>
                         </div>
