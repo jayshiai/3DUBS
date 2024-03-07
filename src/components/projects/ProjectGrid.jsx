@@ -66,7 +66,7 @@ const ProjectGrid = () => {
             <NavOverlay activate={activate} repeat={true} />
             <div ref={projects} className='w-screen  p-2 gap-4    grid grid-cols-2 lg:grid-cols-4 auto-rows-[30vmin]   '>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-2 ave text-3xl flex items-end`}>
-                    The Three Dubs
+                    Aryan Singh
                 </div>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-4`}>
                     <p className=' ave text-3xl '>Projects / Work</p>
@@ -76,16 +76,16 @@ const ProjectGrid = () => {
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} hidden  transition-all duration-500 delay-200 p-2 row-start-5 col-start-2 rockSalt text-3xl lg:flex justify-center items-end `}>
                     Infinite Scroll
                 </div>
-                <div ref={el => projectRefs.current[0] = el} onClick={() => handleClick(0)} className=''><ProjectGridImage activate={activate} src={"/projects/1.jpg"} /></div>
-                <div ref={el => projectRefs.current[1] = el} onClick={() => handleClick(1)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/2.jpg"} /></div>
-                <div ref={el => projectRefs.current[2] = el} onClick={() => handleClick(2)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/3.jpg"} /></div>
-                <div ref={el => projectRefs.current[3] = el} onClick={() => handleClick(3)} className=' '><ProjectGridImage activate={activate} src={"/projects/4.jpg"} /></div>
-                <div ref={el => projectRefs.current[4] = el} onClick={() => handleClick(4)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/5.jpg"} /></div>
-                <div ref={el => projectRefs.current[5] = el} onClick={() => handleClick(5)} className=' lg:col-start-2'><ProjectGridImage activate={activate} src={"/projects/6.jpg"} /></div>
-                <div ref={el => projectRefs.current[6] = el} onClick={() => handleClick(6)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/7.jpg"} /></div>
-                <div ref={el => projectRefs.current[7] = el} onClick={() => handleClick(7)} className=''><ProjectGridImage activate={activate} src={"/projects/8.jpg"} /></div>
-                <div ref={el => projectRefs.current[8] = el} onClick={() => handleClick(8)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/9.jpg"} /></div>
-                <div ref={el => projectRefs.current[9] = el} onClick={() => handleClick(9)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/10.jpg"} /></div>
+                <div ref={el => projectRefs.current[0] = el} onClick={() => handleClick(0)} className=''><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
+                <div ref={el => projectRefs.current[1] = el} onClick={() => handleClick(1)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m2.jpeg"} /></div>
+                <div ref={el => projectRefs.current[2] = el} onClick={() => handleClick(2)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
+                <div ref={el => projectRefs.current[3] = el} onClick={() => handleClick(3)} className=' '><ProjectGridImage activate={activate} src={"/projects/m4.jpeg"} /></div>
+                <div ref={el => projectRefs.current[4] = el} onClick={() => handleClick(4)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
+                <div ref={el => projectRefs.current[5] = el} onClick={() => handleClick(5)} className=' lg:col-start-2'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
+                <div ref={el => projectRefs.current[6] = el} onClick={() => handleClick(6)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
+                <div ref={el => projectRefs.current[7] = el} onClick={() => handleClick(7)} className=''><ProjectGridImage activate={activate} src={"/projects/m2.jpeg"} /></div>
+                <div ref={el => projectRefs.current[8] = el} onClick={() => handleClick(8)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
+                <div ref={el => projectRefs.current[9] = el} onClick={() => handleClick(9)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m4.jpeg"} /></div>
             </div>
             <div className='w-screen  p-2 gap-4    grid grid-cols-2 lg:grid-cols-4 auto-rows-[30vmin]   '>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-2 ave text-3xl flex items-end`}>
@@ -99,16 +99,16 @@ const ProjectGrid = () => {
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} hidden transition-all duration-500 delay-200 p-2 row-start-4 col-start-2 rockSalt text-3xl lg:flex justify-center `}>
                     Infinite Scroll
                 </div>
-                <div ref={el => projectRefs.current[10] = el} onClick={() => handleClick(10)} className=''><ProjectGridImage activate={activate} src={"/projects/1.jpg"} /></div>
-                <div ref={el => projectRefs.current[11] = el} onClick={() => handleClick(11)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/2.jpg"} /></div>
-                <div ref={el => projectRefs.current[12] = el} onClick={() => handleClick(12)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/3.jpg"} /></div>
-                <div ref={el => projectRefs.current[13] = el} onClick={() => handleClick(13)} className=' '><ProjectGridImage activate={activate} src={"/projects/4.jpg"} /></div>
-                <div ref={el => projectRefs.current[14] = el} onClick={() => handleClick(14)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/5.jpg"} /></div>
-                <div ref={el => projectRefs.current[15] = el} onClick={() => handleClick(15)} className=' lg:col-start-2'><ProjectGridImage activate={activate} src={"/projects/6.jpg"} /></div>
-                <div ref={el => projectRefs.current[16] = el} onClick={() => handleClick(16)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/7.jpg"} /></div>
-                <div ref={el => projectRefs.current[17] = el} onClick={() => handleClick(17)} className=''><ProjectGridImage activate={activate} src={"/projects/8.jpg"} /></div>
-                <div ref={el => projectRefs.current[18] = el} onClick={() => handleClick(18)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/9.jpg"} /></div>
-                <div ref={el => projectRefs.current[19] = el} onClick={() => handleClick(19)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/10.jpg"} /></div>
+                <div ref={el => projectRefs.current[10] = el} onClick={() => handleClick(10)} className=''><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
+                <div ref={el => projectRefs.current[11] = el} onClick={() => handleClick(11)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m2.jpeg"} /></div>
+                <div ref={el => projectRefs.current[12] = el} onClick={() => handleClick(12)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
+                <div ref={el => projectRefs.current[13] = el} onClick={() => handleClick(13)} className=' '><ProjectGridImage activate={activate} src={"/projects/m4.jpeg"} /></div>
+                <div ref={el => projectRefs.current[14] = el} onClick={() => handleClick(14)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
+                <div ref={el => projectRefs.current[15] = el} onClick={() => handleClick(15)} className=' lg:col-start-2'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
+                <div ref={el => projectRefs.current[16] = el} onClick={() => handleClick(16)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
+                <div ref={el => projectRefs.current[17] = el} onClick={() => handleClick(17)} className=''><ProjectGridImage activate={activate} src={"/projects/m2.jpeg"} /></div>
+                <div ref={el => projectRefs.current[18] = el} onClick={() => handleClick(18)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
+                <div ref={el => projectRefs.current[19] = el} onClick={() => handleClick(19)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m4.jpeg"} /></div>
             </div>
             {activate && (
                 <ProjectInfo handleClick={handleClick} index={index} setIndex={setIndex} projectRefs={projectRefs} />
