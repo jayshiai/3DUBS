@@ -16,12 +16,12 @@ const Bindows = ({ completed }) => {
         <div className='h-screen w-screen overflow-hidden '>
             <div onClick={() => setOpen(false)} id='screen' className=' h-[calc(100vh-32px)] bg-[url("/assets/bindows/windows_xp_bliss.jpg")] bg-cover'>
 
-                <DesktopIcon url='http://localhost:3000/nav' image="/assets/bindows/my_computer.png" text="My Computer" bindows={bindows} setBindows={setBindows} />
-                <DesktopIcon url='http://localhost:3000/about' image="/assets/bindows/about.png" text="About us" bindows={bindows} setBindows={setBindows} />
-                <DesktopIcon url='http://localhost:3000/crew' image="/assets/bindows/team.png" text="Our Crew" bindows={bindows} setBindows={setBindows} />
-                <DesktopIcon url='http://localhost:3000/projects' image="/assets/bindows/My Pictures.png" text="Projects" bindows={bindows} setBindows={setBindows} />
-                <DesktopIcon url='http://localhost:3000/contactus' image="/assets/bindows/outlook.png" text="Contact Us" bindows={bindows} setBindows={setBindows} />
-                <DesktopIcon url={pathname == "/bindows" ? 'http://localhost:3000/bindows2' : 'http://localhost:3000/bindows'} image="/assets/bindows/logo.png" text="Bindows Emulator" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url='/nav' image="/assets/bindows/my_computer.png" text="My Computer" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url='/about' image="/assets/bindows/about.png" text="About us" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url='/crew' image="/assets/bindows/team.png" text="Our Crew" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url='/projects' image="/assets/bindows/My Pictures.png" text="Projects" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url='/contactus' image="/assets/bindows/outlook.png" text="Contact Us" bindows={bindows} setBindows={setBindows} />
+                <DesktopIcon url={pathname == "/bindows" ? '/bindows2' : '/bindows'} image="/assets/bindows/logo.png" text="Bindows Emulator" bindows={bindows} setBindows={setBindows} />
             </div>
             <div className='relative'>
                 <StartMenu open={open} />
