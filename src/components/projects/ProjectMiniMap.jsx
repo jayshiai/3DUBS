@@ -44,16 +44,16 @@ const ProjectMiniMap = ({ index, setIndex, projectRefs }) => {
     return (
         <div className='w-[110px] h-[95px] md:w-[220px] md:h-[190px] p-2 gap-[2px]   grid grid-cols-4  '>
 
-            <div ref={el => projectMiniRefs.current[0] = el} onClick={() => handleClick(0)} className=''><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[1] = el} onClick={() => handleClick(1)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m2.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[2] = el} onClick={() => handleClick(2)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[3] = el} onClick={() => handleClick(3)} className=' '><ProjectGridImage activate={activate} src={"/projects/m4.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[4] = el} onClick={() => handleClick(4)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[5] = el} onClick={() => handleClick(5)} className=' lg:col-start-2'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[6] = el} onClick={() => handleClick(6)} className=' lg:col-start-4'><ProjectGridImage activate={activate} src={"/projects/m1.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[7] = el} onClick={() => handleClick(7)} className=''><ProjectGridImage activate={activate} src={"/projects/m2.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[8] = el} onClick={() => handleClick(8)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m3.jpeg"} /></div>
-            <div ref={el => projectMiniRefs.current[9] = el} onClick={() => handleClick(9)} className=' lg:col-start-3'><ProjectGridImage activate={activate} src={"/projects/m4.jpeg"} /></div>
+            <div ref={el => projectMiniRefs.current[0] = el} onClick={() => handleClick(0)} className='cursor-pointer '><ProjectGridImage activate={activate} mini={mini} src={"/projects/1.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[1] = el} onClick={() => handleClick(1)} className='cursor-pointer  lg:col-start-3'><ProjectGridImage activate={activate} mini={mini} src={"/projects/2.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[2] = el} onClick={() => handleClick(2)} className='cursor-pointer  lg:col-start-4'><ProjectGridImage activate={activate} mini={mini} src={"/projects/3.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[3] = el} onClick={() => handleClick(3)} className='cursor-pointer  '><ProjectGridImage activate={activate} mini={mini} src={"/projects/4.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[4] = el} onClick={() => handleClick(4)} className='cursor-pointer  lg:col-start-3'><ProjectGridImage activate={activate} mini={mini} src={"/projects/5.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[5] = el} onClick={() => handleClick(5)} className='cursor-pointer  lg:col-start-2'><ProjectGridImage activate={activate} mini={mini} src={"/projects/6.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[6] = el} onClick={() => handleClick(6)} className='cursor-pointer  lg:col-start-4'><ProjectGridImage activate={activate} mini={mini} src={"/projects/7.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[7] = el} onClick={() => handleClick(7)} className='cursor-pointer '><ProjectGridImage activate={activate} mini={mini} src={"/projects/8.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[8] = el} onClick={() => handleClick(8)} className='cursor-pointer  lg:col-start-3'><ProjectGridImage activate={activate} mini={mini} src={"/projects/9.jpg"} /></div>
+            <div ref={el => projectMiniRefs.current[9] = el} onClick={() => handleClick(9)} className='cursor-pointer  lg:col-start-3'><ProjectGridImage activate={activate} mini={mini} src={"/projects/10.jpg"} /></div>
 
         </div>
     )
