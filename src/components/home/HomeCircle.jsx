@@ -3,6 +3,7 @@ import RandomCircle from '@/components/RandomCircle';
 import SideNav from '@/components/SideNav';
 import { useState } from 'react'
 import LogoOverlay from '../LogoOverlay';
+import NavOverlay from '../nav/NavOverlay';
 
 const HomeCircle = ({ completed }) => {
     const [color, setColor] = useState('#000');
@@ -10,7 +11,8 @@ const HomeCircle = ({ completed }) => {
         <>
             <LogoOverlay />
             <RandomCircle color={color} />
-            <SideNav setColorActivate={true} currentHomeVariant={1} setColor={setColor} />
+            <div className='block lg:hidden'><NavOverlay /></div>
+            <div className='hidden lg:block'><SideNav setColorActivate={true} currentHomeVariant={1} setColor={setColor} /></div>
         </>
     )
 }
