@@ -89,7 +89,7 @@ const ProjectGrid = () => {
             </div>
             <div className='w-screen  p-2 gap-4    grid grid-cols-2 lg:grid-cols-4 auto-rows-[30vmin]   '>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-2 ave text-3xl flex items-end`}>
-                    The Three Dubs
+                    Aryan Singh
                 </div>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-4`}>
                     <p className=' ave text-3xl '>Projects / Work</p>
