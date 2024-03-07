@@ -2,11 +2,23 @@
 import BackButton from "@/components/BackButton";
 import GLTextTorus from "@/components/GL/GLTextTorus";
 import IndividualAbout from "@/components/IndividualAbout";
-import LocomotiveScroll from 'locomotive-scroll';
+import { useEffect } from "react";
 const description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam minima expedita maxime ab esse neque, velit enim, fugiat optio quaerat non voluptate cupiditate perspiciatis harum hic! Ducimus asperiores assumenda, beatae perferendis sunt at, nisi veritatis molestias vitae, neque minus unde aut repudiandae sapiente error deleniti reprehenderit officiis doloremque enim qui."
 
 const page = () => {
-  const locomotiveScroll = new LocomotiveScroll();
+  useEffect(() => {
+    let scroll;
+    import("locomotive-scroll").then((locomotiveModule) => {
+      scroll = new locomotiveModule.default();
+    });
+
+    return () => {
+      if (scroll) {
+        scroll.destroy()
+      }
+    };
+  }, []);
+
   return (
     <>
       <BackButton />

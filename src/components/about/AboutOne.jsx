@@ -36,7 +36,6 @@ const AboutOne = () => {
 
         return () => {
             if (scroll) {
-                console.log("yamete")
                 scroll.destroy()
             }
         };

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, use } from 'react'
 import gsap from 'gsap';
 
 
@@ -69,11 +69,15 @@ const filters = [
 ]
 const GooeyCursor = () => {
     const columns = 30;
-    const cellSize = window.innerWidth / columns;
-    const rows = Math.ceil(window.innerHeight / cellSize)
+    let cellSize;
+    let rows;
+    let cells;
 
-    const cells = rows * columns;
-
+    useEffect(() => {
+        cellSize = window.innerWidth / columns;
+        rows = Math.ceil(window.innerHeight / cellSize)
+        cells = rows * columns;
+    })
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const cellsRef = useRef([]);
     const getCellAtCursor = () => {
