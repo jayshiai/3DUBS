@@ -7,7 +7,7 @@ import { useState } from "react";
 import AboutIntro from "@/components/AboutIntro";
 const sections = [
     { name: "Jayvardhan Patil", next: 1, fontFamily: "ave", theme: "#000000" },
-    { name: "Aryan Chouhan", next: 2, fontFamily: "rockSalt", theme: "#EF4444" },
+    { name: "Aryan Chauhan", next: 2, fontFamily: "rockSalt", theme: "#EF4444" },
     { name: "Kunal Sharma", next: 0, fontFamily: "sacramento", theme: "#3399ff" },
 ];
 

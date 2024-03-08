@@ -46,17 +46,12 @@ const HeroImage = ({ hobbies, location, fontFamily }) => {
         className="w-[85vw] h-full relative overflow-hidden rounded-3xl"
         // Add the mouse move event handler to the image container
         onMouseMove={handleMouseMove}
-        onMouseLeave={() =>
-          setCords({
-            x: 0,
-            y: 0,
-          })
-        }
+
       >
         <Image
           src={image[fontFamily]}
           fill={true}
-          className=" object-cover ease-linear duration-1000"
+          className=" object-cover ease-linear duration-0"
           // Add the object-position style based on the mouse position
           style={{
             objectPosition: `${50 + cords.x}% ${50 + cords.y}%`,

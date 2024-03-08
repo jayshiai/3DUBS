@@ -27,9 +27,9 @@ const AboutSection = ({ name, setCurrent, next, fontFamily, theme, hobbies, loca
       <AboutTitle fontFamily={fontFamily} name={name} />
       <div className="h-[47.5%] w-full ">
         <div className="h-[20%] flex items-center justify-between px-5">
-          <div className="text-xl font-mono opacity-60">15 / 04</div>
+          <div className="text-xl font-mono opacity-60">Devs</div>
           <div className=" w-[80%] h-[3px] bg-black/40"></div>
-          <div className="text-xl font-mono opacity-60">60 / 77</div>
+          <div className="text-xl font-mono ">Tomorrow</div>
         </div>
         <HeroImage hobbies={hobbies} location={location} fontFamily={fontFamily} />
       </div>

@@ -9,15 +9,27 @@ const TaskButton = ({ text, image, selected, setBindows }) => {
             // Iterate over the keys of the previous bindows
             Object.keys(prev).forEach((key) => {
                 // Check if the zIndex needs to be adjusted
-                if (prev[key].zIndex > prev[text].zIndex) {
+                if (prev[key].zIndex > prev[text].zIndex && key !== text) {
                     newBindows[key] = { ...prev[key], selected: false, zIndex: prev[key].zIndex - 1 };
-                } else {
+                } else if (key !== text) {
                     newBindows[key] = { ...prev[key], selected: false };
+                }
+                else {
+                    newBindows[key] = prev[key];
                 }
             });
 
-            // Update the zIndex for the specified 'text'
-            newBindows[text] = { ...prev[text], selected: true, minimized: false, zIndex: Object.keys(prev).length + 1 };
+            if (newBindows[text].minimized) {
+                // Update the zIndex for the specified 'text'
+                newBindows[text] = { ...prev[text], selected: true, minimized: false, zIndex: Object.keys(prev).length + 1 };
+            }
+            else if (newBindows[text].selected) {
+                newBindows[text] = { ...prev[text], selected: false, minimized: true, zIndex: Object.keys(prev).length + 1 };
+            }
+            else {
+                // Update the zIndex for the specified 'text'
+                newBindows[text] = { ...prev[text], selected: true, minimized: false, zIndex: Object.keys(prev).length + 1 };
+            }
 
             return newBindows;
         });

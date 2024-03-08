@@ -1,13 +1,16 @@
 import Clock from "@/components/contact/Clock"
 import { CiGlobe } from "react-icons/ci";
 import { PiArrowArcLeftThin } from "react-icons/pi";
-import BackButton from "../BackButton";
 
+import { FaArrowLeft } from "react-icons/fa";
 import { motion } from 'framer-motion'
+import Link from "next/link";
 const ContactClock = () => {
     return (
         <>
-            <BackButton />
+            <Link href={"/"} className={`text-white z-50 m-4     fixed text-3xl  cursor-pointer `}>
+                <FaArrowLeft className='mix-blend-difference' />
+            </Link>
             <div className='h-screen w-screen fixed top-0 bg-black text-white overflow-hidden'>
                 <div className="w-full h-2/3 lg:h-1/2 flex lg:flex-row flex-col">
                     <div className="w-full lg:w-1/2 h-full p-8 font-medium tracking-tighter flex flex-col gap-8 montserrat">

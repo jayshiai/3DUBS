@@ -2,7 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FaGithub, FaInstagram } from "react-icons/fa6";
-import BackButton from "../BackButton";
+
+import { FaArrowLeft } from "react-icons/fa";
 const ContactCard = () => {
     const cardRef = useRef(null);
     const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -42,7 +43,9 @@ const ContactCard = () => {
     }, []);
     return (
         <>
-            <BackButton color={true} />
+            <Link href={"/"} className={`text-black z-50 m-4     fixed text-3xl  cursor-pointer `}>
+                <FaArrowLeft className='mix-blend-difference' />
+            </Link>
             <div
                 ref={cardRef}
                 style={{
