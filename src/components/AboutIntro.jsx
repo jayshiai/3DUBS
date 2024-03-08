@@ -3,7 +3,7 @@ import AnimatedTextReveal from "@/components/AnimatedTextReveal";
 import { motion } from "framer-motion";
 import HorizontalDivider from "./HorizontalDivider";
 import VerticalDivider from "./VerticalDivider";
-const AboutIntro = ({ fontFamily, theme, placeholderText }) => {
+const AboutIntro = ({ fontFamily, theme, placeholderText, skills }) => {
   const vertVariants = {
     initial: {
       y: "100%",
@@ -69,7 +69,7 @@ const AboutIntro = ({ fontFamily, theme, placeholderText }) => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="h-full w-4/5 p-4 text-black flex flex-col gap-2  montserrat "
+          className="h-full w-4/5 p-4 text-black flex flex-col gap-2  montserrat overflow-y-auto "
         >
           {placeholderText.map((item, index) => {
             return <AnimatedTextReveal {...item} key={index} />;
@@ -118,7 +118,19 @@ const AboutIntro = ({ fontFamily, theme, placeholderText }) => {
           ></motion.div>
         </div>
         <VerticalDivider />
-        <div className="w-[80%]"></div>
+        <div className="w-[80%] p-4">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="h-full w-4/5 p-4 text-black text-2xl flex flex-col gap-2  montserrat overflow-y-auto "
+          >
+            {skills.map((item, index) => {
+              return <AnimatedTextReveal {...item} key={index} />;
+            })}
+          </motion.div>
+
+        </div>
       </div>
     </>
   );

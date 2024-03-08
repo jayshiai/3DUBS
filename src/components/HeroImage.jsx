@@ -2,7 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
-const HeroImage = () => {
+const HeroImage = ({ hobbies, location, fontFamily }) => {
+  const image = {
+    "ave": "/img/frieren.webp",
+    "rockSalt": "/img/beach.jpg",
+    "sacramento": "/img/frieren.png",
+  }
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const [cords, setCords] = useState({ x: 0, y: 0 });
@@ -49,7 +54,7 @@ const HeroImage = () => {
         }
       >
         <Image
-          src="/img/beach.jpg"
+          src={image[fontFamily]}
           fill={true}
           className=" object-cover ease-linear duration-1000"
           // Add the object-position style based on the mouse position
@@ -59,8 +64,8 @@ const HeroImage = () => {
         />
         <div className="z-10  text-white font-mono font-bold opacity-80 text-2xl absolute bottom-0 m-5 uppercase">
           <div>Nationality: Indian</div>
-          <div>Hobbies: Eat, Sleep, Repeat</div>
-          <div>From: Indore, Madhya Pradesh</div>
+          <div>{hobbies}</div>
+          <div>{location}</div>
         </div>
       </motion.div>
     </div>

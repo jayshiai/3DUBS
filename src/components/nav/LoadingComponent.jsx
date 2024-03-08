@@ -1,24 +1,32 @@
 
 "use client"
-import Link from 'next/link';
 import React, { useEffect } from 'react'
-
+import { useRouter, usePathname } from 'next/navigation';
 const LoadingComponent = ({ url, text }) => {
 
-
-
+    const router = useRouter();
+    const currentUrl = usePathname();
     const handleButtonClick = () => {
-        if (typeof demo !== 'undefined' && demo.init) {
-            demo.init();
-        } else {
-            console.error('demo.init is not available');
+        if (currentUrl != url) {
+            if (typeof demo !== 'undefined' && demo.init) {
+                demo.init();
+            } else {
+                console.error('demo.init is not available');
+            }
+            console.log(currentUrl, url);
+            router.push(url);
+
         }
+        else {
+            console.log("same");
+        }
+
     };
 
 
     return (
 
-        <Link onClick={handleButtonClick} href={url} >{text}</Link>
+        <div onClick={handleButtonClick} >{text}</div>
 
 
 

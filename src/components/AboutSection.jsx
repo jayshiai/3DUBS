@@ -4,7 +4,7 @@ import HeroImage from "@/components/HeroImage";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const AboutSection = ({ name, setCurrent, next, fontFamily, theme }) => {
+const AboutSection = ({ name, setCurrent, next, fontFamily, theme, hobbies, location }) => {
   return (
     <motion.div
       initial={{
@@ -31,7 +31,7 @@ const AboutSection = ({ name, setCurrent, next, fontFamily, theme }) => {
           <div className=" w-[80%] h-[3px] bg-black/40"></div>
           <div className="text-xl font-mono opacity-60">60 / 77</div>
         </div>
-        <HeroImage />
+        <HeroImage hobbies={hobbies} location={location} fontFamily={fontFamily} />
       </div>
 
       <div

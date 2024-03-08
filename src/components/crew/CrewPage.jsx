@@ -31,21 +31,21 @@ const CrewPage = () => {
                 <FaArrowLeft className='mix-blend-difference' />
             </Link>
             <div ref={crew} className='h-screen'>
-                <div className='hover:bg-black hover:text-white raleway h-1/3 w-full p-8 ave text-[10vw] whitespace-nowrap   flex items-center  border-b text-center'><LoadingComponent url={'/jayvardhan'} text={"Jayvardhan Patil"} /></div>
-                <div className='hover:bg-red-600 hover:text-blue-600 raleway h-1/3 w-full p-8 rockSalt text-[10vw] whitespace-nowrap   flex items-center  border-b text-left'><LoadingComponent url={'/aryan'} text={"Aryan Singh"} /></div>
-                <div className='hover:bg-blue-600 hover:text-yellow-200  raleway h-1/3 w-full p-8 sacramento text-[10vw] whitespace-nowrap   flex items-center  border-b text-right'><LoadingComponent url={'/kunal'} text={"Kunal Sharma"} /></div>
+                <div className='hover:bg-black hover:text-white raleway h-1/3 w-full p-8 ave text-[10vw] whitespace-nowrap   flex items-center  border-b  cursor-pointer'><LoadingComponent url={'/jayvardhan'} text={"Jayvardhan Patil"} /></div>
+                <div className='hover:bg-red-600 hover:text-blue-600 raleway h-1/3 w-full p-8 rockSalt text-[10vw] whitespace-nowrap   flex items-center  border-b cursor-pointer'><LoadingComponent url={'/aryan'} text={"Aryan Singh"} /></div>
+                <div className='hover:bg-blue-600 hover:text-yellow-200  raleway h-1/3 w-full p-8 sacramento text-[10vw] whitespace-nowrap   flex items-center  border-b cursor-pointer'><LoadingComponent url={'/kunal'} text={"Kunal Sharma"} /></div>
 
             </div>
             <div className='h-screen'>
-                <div className='hover:bg-black hover:text-white raleway h-1/3 w-full p-8 ave text-[10vw] whitespace-nowrap   flex items-center  border-b text-center'><LoadingComponent url={'/jayvardhan'} text={"Jayvardhan Patil"} /></div>
-                <div className='hover:bg-red-600 hover:text-blue-600 raleway h-1/3 w-full p-8 rockSalt text-[10vw] whitespace-nowrap   flex items-center  border-b text-left'><LoadingComponent url={'/aryan'} text={"Aryan Singh"} /></div>
-                <div className='hover:bg-blue-600 hover:text-yellow-200  raleway h-1/3 w-full p-8 sacramento text-[10vw] whitespace-nowrap   flex items-center  border-b text-right'><LoadingComponent url={'/kunal'} text={"Kunal Sharma"} /></div>
+                <div className='hover:bg-black hover:text-white raleway h-1/3 w-full p-8 ave text-[10vw] whitespace-nowrap   flex items-center  border-b  cursor-pointer'><LoadingComponent url={'/jayvardhan'} text={"Jayvardhan Patil"} /></div>
+                <div className='hover:bg-red-600 hover:text-blue-600 raleway h-1/3 w-full p-8 rockSalt text-[10vw] whitespace-nowrap   flex items-center  border-b cursor-pointer'><LoadingComponent url={'/aryan'} text={"Aryan Singh"} /></div>
+                <div className='hover:bg-blue-600 hover:text-yellow-200  raleway h-1/3 w-full p-8 sacramento text-[10vw] whitespace-nowrap   flex items-center  border-b cursor-pointer'><LoadingComponent url={'/kunal'} text={"Kunal Sharma"} /></div>
 
             </div>
             <div className='h-screen'>
-                <div className='hover:bg-black hover:text-white raleway h-1/3 w-full p-8 ave text-[10vw] whitespace-nowrap   flex items-center  border-b text-center'><LoadingComponent url={'/jayvardhan'} text={"Jayvardhan Patil"} /></div>
-                <div className='hover:bg-red-600 hover:text-blue-600 raleway h-1/3 w-full p-8 rockSalt text-[10vw] whitespace-nowrap   flex items-center  border-b text-left'><LoadingComponent url={'/aryan'} text={"Aryan Singh"} /></div>
-                <div className='hover:bg-blue-600 hover:text-yellow-200  raleway h-1/3 w-full p-8 sacramento text-[10vw] whitespace-nowrap   flex items-center  border-b text-right'><LoadingComponent url={'/kunal'} text={"Kunal Sharma"} /></div>
+                <div className='hover:bg-black hover:text-white raleway h-1/3 w-full p-8 ave text-[10vw] whitespace-nowrap   flex items-center  border-b  cursor-pointer'><LoadingComponent url={'/jayvardhan'} text={"Jayvardhan Patil"} /></div>
+                <div className='hover:bg-red-600 hover:text-blue-600 raleway h-1/3 w-full p-8 rockSalt text-[10vw] whitespace-nowrap   flex items-center  border-b cursor-pointer'><LoadingComponent url={'/aryan'} text={"Aryan Singh"} /></div>
+                <div className='hover:bg-blue-600 hover:text-yellow-200  raleway h-1/3 w-full p-8 sacramento text-[10vw] whitespace-nowrap   flex items-center  border-b cursor-pointer'><LoadingComponent url={'/kunal'} text={"Kunal Sharma"} /></div>
 
             </div>
 
