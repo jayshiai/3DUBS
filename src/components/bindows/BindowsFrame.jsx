@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'
-const BindowsFrame = ({ text, url, setOpen, bindows, setBindows }) => {
+const BindowsFrame = ({ text, url, setOpen, setOpenBindows, bindows, setBindows }) => {
     const [width, setWidth] = useState(400); // Initial width
     const [height, setHeight] = useState(400); // Initial height
     const [x, setX] = useState(window.innerWidth / 3);
@@ -23,11 +23,17 @@ const BindowsFrame = ({ text, url, setOpen, bindows, setBindows }) => {
         }
     }
     const handleClose = () => {
-        setOpen(false)
+
         setBindows((prev) => {
             const newBindows = { ...prev }
             delete newBindows[text]
             return newBindows
+        })
+        if (setOpen) setOpen(false)
+        if (setOpenBindows) setOpenBindows((prev) => {
+            const newOpenBindows = { ...prev }
+            newOpenBindows[text] = { open: false }
+            return newOpenBindows
         })
 
     }

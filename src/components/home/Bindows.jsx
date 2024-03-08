@@ -5,7 +5,7 @@ import StartMenu from '@/components/bindows/StartMenu'
 import TaskButton from '@/components/bindows/TaskButton'
 import TimeButton from '@/components/bindows/TimeButton'
 import { usePathname } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Bindows = ({ completed }) => {
     const [open, setOpen] = useState(false)
@@ -22,9 +22,10 @@ const Bindows = ({ completed }) => {
                 <DesktopIcon url='/projects' image="/assets/bindows/My Pictures.png" text="Projects" bindows={bindows} setBindows={setBindows} />
                 <DesktopIcon url='/contactus' image="/assets/bindows/outlook.png" text="Contact Us" bindows={bindows} setBindows={setBindows} />
                 <DesktopIcon url={pathname == "/bindows" ? '/bindows2' : '/bindows'} image="/assets/bindows/logo.png" text="Bindows Emulator" bindows={bindows} setBindows={setBindows} />
+                <StartMenu open={open} setBindows={setBindows} bindows={bindows} />
             </div>
             <div className='relative'>
-                <StartMenu open={open} />
+
                 <div id='taskbar' className='relative h-8 w-full flex' style={{
                     background: 'linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #333 100%) center/cover no-repeat'
                 }}>

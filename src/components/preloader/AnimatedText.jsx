@@ -92,18 +92,8 @@ const AnimatedText = ({ clicked, setCompleted, loaded }) => {
             ))}
           </div>
 
-          <div className="overflow-hidden text-end">
-            <motion.div
-              variants={animatedTextTwo}
-              initial="initial"
-              animate={loaded ? "animate" : "initial"}
-              transition={{
-                delay: 0,
-              }}
-              className=" inline-block"
-            >
-              20
-            </motion.div>
+          <div className="overflow-hidden text-end leading-[0]">
+
             <motion.div
               variants={animatedTextOne}
               initial="initial"
@@ -111,9 +101,9 @@ const AnimatedText = ({ clicked, setCompleted, loaded }) => {
               transition={{
                 delay: 1,
               }}
-              className=" inline-block"
+              className=" inline-block text-xl font-mono"
             >
-              23
+              a <span className="font-bold text-3xl"><span className="text-stroke ">Devs</span>Tomorrow</span><br />Initiative
             </motion.div>
           </div>
         </motion.div>
