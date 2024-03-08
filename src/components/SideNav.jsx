@@ -2,6 +2,7 @@
 import { motion, stagger } from "framer-motion";
 import { useEffect } from "react";
 import Link from "next/link";
+import LoadingComponent from "./nav/LoadingComponent";
 const SideNav = ({ setColorActivate, currentHomeVariant, setColor }) => {
   const events = [
     { title: "Home", theme: "#000", href: "/" },
@@ -126,7 +127,8 @@ const SideNav = ({ setColorActivate, currentHomeVariant, setColor }) => {
         }}
         className="sidebar_text  "
       >
-        <Link href={event.href} className={`${currentHomeVariant == 1 || currentHomeVariant == 4 ? "text-black hover:text-black" : "text-white hover:text-white"} `}>{event.title}</Link>
+        <div className={`${currentHomeVariant == 1 || currentHomeVariant == 4 ? "text-black hover:text-black" : "text-white hover:text-white"} `}> <LoadingComponent url={event.href} text={event.title} /> </div>
+        {/* <Link href={event.href} className={`${currentHomeVariant == 1 || currentHomeVariant == 4 ? "text-black hover:text-black" : "text-white hover:text-white"} `}>{event.title}</Link> */}
       </motion.div>
     </div>
   ));

@@ -1,9 +1,17 @@
+"use client"
 import BackButton from "@/components/BackButton";
 import GLTextTwister from "@/components/GL/GLTextTwister";
 import IndividualAbout from "@/components/IndividualAbout";
 const description = "I find immense joy in playing cricket and indulging in the timeless melodies of old Bollywood songs. Though I once dreamt of entrepreneurship, my focus has shifted towards mastering the craft of software engineering while prioritizing my well-being. I resonate with the concept of being a 'sakth launda,' where my heart's devotion is solely reserved for that one special person"
-
+import { useEffect } from 'react';
 const page = () => {
+  useEffect(() => {
+
+    if (demo.spinner) {
+      demo.spinner.setComplete();
+    }
+
+  }, []);
   return (
     <>
       <BackButton />

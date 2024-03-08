@@ -1,10 +1,18 @@
+"use client"
 import BackButton from "@/components/BackButton";
 import GLTextSphere from "@/components/GL/GLTextSphere";
 import IndividualAbout from "@/components/IndividualAbout";
 
-
+import { useEffect } from 'react';
 const description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam minima expedita maxime ab esse neque, velit enim, fugiat optio quaerat non voluptate cupiditate perspiciatis harum hic! Ducimus asperiores assumenda, beatae perferendis sunt at, nisi veritatis molestias vitae, neque minus unde aut repudiandae sapiente error deleniti reprehenderit officiis doloremque enim qui."
 const page = () => {
+  useEffect(() => {
+
+    if (demo.spinner) {
+      demo.spinner.setComplete();
+    }
+
+  }, []);
   return (
     <>
       <BackButton />

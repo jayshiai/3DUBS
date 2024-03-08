@@ -17,7 +17,9 @@ const ProjectGrid = () => {
 
             }
         };
-
+        if (demo.spinner) {
+            demo.spinner.setComplete();
+        }
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -63,7 +65,8 @@ const ProjectGrid = () => {
 
     return (
         <>
-            <NavOverlay activate={activate} repeat={true} />
+            <div className='hidden lg:block'><NavOverlay activate={activate} repeat={true} /></div>
+            <div className='block lg:hidden'><NavOverlay activate={activate} /></div>
             <div ref={projects} className='w-screen  p-2 gap-4    grid grid-cols-2 lg:grid-cols-4 auto-rows-[30vmin]   '>
                 <div className={`${activate ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} transition-all duration-500 delay-200 p-2 lg:row-start-2 lg:col-start-2 ave text-3xl flex items-end`}>
                     The Three Dubs

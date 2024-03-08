@@ -1,3 +1,4 @@
+import LoadingScript from "@/components/nav/LoadingScript";
 import "./globals.css";
 
 export const metadata = {
@@ -11,6 +12,8 @@ export default function RootLayout({ children }) {
       <body
         className={`no-scrollbar grid place-content-center bg-white  overflow-x-hidden  `}
       >
+        <LoadingScript />
+        <script src="/js/loader.js" />
 
         {children}
 

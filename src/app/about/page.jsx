@@ -42,6 +42,9 @@ const Page = () => {
 
     window.addEventListener('resize', handleResize);
 
+    if (demo.spinner) {
+      demo.spinner.setComplete();
+    }
     return () => {
       window.removeEventListener('resize', handleResize);
     };

@@ -97,6 +97,11 @@ export default function Home() {
       setVariantIndex(0)
       setIntroVariantIndex(0);
     }
+
+
+    if (demo.spinner) {
+      demo.spinner.setComplete();
+    }
   }, []); // Empty dependency array ensures this effect runs only once on component mount
   useEffect(() => {
     if (completed) {

@@ -1443,6 +1443,7 @@ var Spinner = function () {
       this._canvas.style.position = 'fixed';
       this._canvas.style.top = 0;
       this._canvas.style.left = 0;
+      this._canvas.style.zIndex = 9999;
 
       this._centerX = this._canvasW / 2;
       this._centerY = this._canvasH / 2;
@@ -1589,10 +1590,121 @@ var Spinner = function () {
   return Spinner;
 }();
 'use strict';
+const mySettings = [
+  {
+    rebound: {
+      tension: 16,
+      friction: 5
+    },
+    spinner: {
+      id: 'spinner',
+      radius: 90,
+      sides: 3,
+      depth: 4,
+      colors: {
+        //background: '#231E76',
+        //stroke: '#231E76',
+        background: '#f0f0f0',
+        stroke: '#272633',
+        base: null,
+        child: '#272633'
+      },
+      alwaysForward: true, // When false the spring will reverse normally.
+      restAt: 0.5, // A number from 0.1 to 0.9 || null for full rotation
+      renderBase: false
+    }
+  },
+  {
+    rebound: {
+      tension: 14,
+      friction: 10
+    },
+    spinner: {
+      id: 'spinner',
+      radius: 90,
+      sides: 5,
+      depth: 8,
+      colors: {
+        background: '#00272C',
+        stroke: null,
+        base: null,
+        child: '#02C39A'
+      },
+      alwaysForward: true, // When false the spring will reverse normally.
+      restAt: null, // A number from 0.1 to 0.9 || null for full rotation
+      renderBase: false
+    }
+  },
+  {
+    rebound: {
+      tension: 10,
+      friction: 7
+    },
+    spinner: {
+      id: 'spinner',
+      radius: 160,
+      sides: 8,
+      depth: 6,
+      colors: {
+        background: '#181818',
+        stroke: '#D23232',
+        base: null,
+        child: '#181818'
+      },
+      alwaysForward: true, // When false the spring will reverse normally.
+      restAt: null, // A number from 0.1 to 0.9 || null for full rotation
+      renderBase: false
+    }
+  },
+  {
+    rebound: {
+      tension: 1,
+      friction: 3
+    },
+    spinner: {
+      radius: 90,
+      sides: 5,
+      depth: 4,
+      colors: {
+        background: '#91A7D0',
+        stroke: null, //'#231E76',
+        base: null, //'#403F6F',
+        child: '#F6CAC9'
+      },
+      alwaysForward: true, // When false the spring will reverse normally.
+      restAt: 0.8, // A number from 0.1 to 0.9 || null for full rotation
+      renderBase: true
+    }
+  },
+  {
+    rebound: {
+      tension: 2,
+      friction: 7
+    },
+    spinner: {
+      id: 'spinner',
+      radius: 200,
+      sides: 3,
+      depth: 9,
+      colors: {
+        background: '#f0f0f0',
+        stroke: null,
+        base: '#222',
+        child: '#f0f0f0'
+      },
+      alwaysForward: true, // When false the spring will reverse normally.
+      restAt: null, // A number from 0.1 to 0.9 || null for full rotation
+      renderBase: true
+    }
+  },
+
+]
 
 // Custom SETTINGS for each demo in related index.html
+const randomVariant = Math.floor(Math.random() * 5);
 
-var settings = SETTINGS || {
+
+var settings = mySettings[randomVariant] || {
   rebound: {
     tension: 2,
     friction: 5
@@ -1612,6 +1724,7 @@ var settings = SETTINGS || {
     renderBase: true // Optionally render basePolygon
   }
 };
+
 
 /**
  * Demo.
@@ -1666,16 +1779,16 @@ var demo = {
     // Init animation with Rebound Spring System.
     demo.spinner.init(demo.spring, spinnerTypeAutoSpin);
 
-    if (spinnerTypeAutoSpin) {
-      // Fake loading time, in a real world just call demo.spinner.setComplete();
-      // whenever the preload will be completed.
-      setTimeout(function () {
-        demo.spinner.setComplete();
-      }, 6000);
-    } else {
-      // Perform real ajax request.
-      demo.loadSomething();
-    }
+    // if (spinnerTypeAutoSpin) {
+    //   // Fake loading time, in a real world just call demo.spinner.setComplete();
+    //   // whenever the preload will be completed.
+    //   setTimeout(function () {
+    //     demo.spinner.setComplete();
+    //   }, 15000);
+    // } else {
+    //   // Perform real ajax request.
+    //   demo.loadSomething();
+    // }
   },
 
 
