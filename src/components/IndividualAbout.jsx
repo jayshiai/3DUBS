@@ -1,6 +1,13 @@
-import React from 'react'
-
+"use client"
+import { useEffect } from 'react';
 const IndividualAbout = ({ quote, title, description, roles, skills }) => {
+  useEffect(() => {
+
+    if (demo.spinner) {
+      demo.spinner.setComplete();
+    }
+
+  }, []);
   return (
     <div className="min-h-screen h-fit w-screen bg-white z-1 rounded-t-3xl cursor-default shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.3)]">
       <div className="h-full w-[90%] md:w-3/4 mx-auto pt-[100px]">
