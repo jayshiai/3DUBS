@@ -52,9 +52,9 @@ const ProjectInfo = ({ handleClick, index, setIndex, projectRefs }) => {
     return (
         <div className='fixed top-0 h-screen w-screen flex flex-col justify-between md:w-[40vw] py-[15vh] px-[8vw] grotesk'>
             <div>
-                <div className=' font-semibold'>{index < 9 ? `0${index + 1}` : index + 1}</div>
-                <div className=' text-[4vw] font-medium leading-none mb-10'>{description[index].title}</div>
-                <div className=' max-w-[30ch] leading-snug mb-10'>{description[index].text}</div>
+                <div className=' font-semibold'>{index % 10 < 9 ? `0${index % 10 + 1}` : index % 10 + 1}</div>
+                <div className=' text-[4vw] font-medium leading-none mb-10'>{description[index % 10].title}</div>
+                <div className=' max-w-[30ch] leading-snug mb-10'>{description[index % 10].text}</div>
 
                 <Link href={"/more"} className='font-bold'>Veiw More</Link>
             </div>
