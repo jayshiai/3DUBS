@@ -70,43 +70,97 @@ const ZenEvents = () => {
         viewport={{ once: true }}
         onMouseLeave={() => setText("The Three Dubs")}
       >
-        <Link onMouseEnter={() => setText("Our Crew")} href={"/crew"} className="shape hover:scale-110   flex justify-center items-center">
+        <Link onClick={(el) => {
+          el.target.style.transition = "0.5s"
+
+          el.target.style.zIndex = 99999
+          el.target.style.scale = 100
+
+        }} onMouseEnter={() => setText("Our Crew")} href={"/crew"} className="shape hover:scale-110   flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#b0bec5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link onMouseEnter={() => setText("About Us")} href={"/about"} className="shape hover:scale-110  flex justify-center items-center">
+        <Link
+          onClick={(el) => {
+            el.target.style.transition = "0.5s"
+
+            el.target.style.zIndex = 99999
+            el.target.style.scale = 100
+
+          }}
+          onMouseEnter={() => setText("About Us")} href={"/about"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#f5f5f5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link onMouseEnter={() => setText("Jayvardhan Patil")} href={"/jayvardhan"} className="shape hover:scale-110  flex justify-center items-center">
+        <Link
+          onClick={(el) => {
+            el.target.style.transition = "0.5s"
+
+            el.target.style.zIndex = 99999
+            el.target.style.scale = 100
+
+          }}
+          onMouseEnter={() => setText("Jayvardhan Patil")} href={"/jayvardhan"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#9b5de5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link onMouseEnter={() => setText("Contact Us")} href={"/contactus"} className="shape hover:scale-110  flex justify-center items-center">
+        <Link
+          onClick={(el) => {
+            el.target.style.transition = "0.5s"
+
+            el.target.style.zIndex = 99999
+            el.target.style.scale = 100
+
+          }}
+          onMouseEnter={() => setText("Contact Us")} href={"/contactus"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#f15bb5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link onMouseEnter={() => setText("Projects")} href={"/projects"} className="shape hover:scale-110  flex justify-center items-center">
+        <Link
+          onClick={(el) => {
+            el.target.style.transition = "0.5s"
+
+            el.target.style.zIndex = 99999
+            el.target.style.scale = 100
+
+          }}
+          onMouseEnter={() => setText("Projects")} href={"/projects"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#fee440] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link onMouseEnter={() => setText("Kunal Sharma")} href={"/kunal"} className="shape hover:scale-110  flex justify-center items-center">
+        <Link
+          onClick={(el) => {
+            el.target.style.transition = "0.5s"
+
+            el.target.style.zIndex = 99999
+            el.target.style.scale = 100
+
+          }}
+          onMouseEnter={() => setText("Kunal Sharma")} href={"/kunal"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#00bbf9] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link onMouseEnter={() => setText("Aryan Singh")} href={"/aryan"} className="shape hover:scale-110  flex justify-center items-center">
+        <Link
+          onClick={(el) => {
+            el.target.style.transition = "0.5s"
+
+            el.target.style.zIndex = 99999
+            el.target.style.scale = 100
+
+          }}
+          onMouseEnter={() => setText("Aryan Singh")} href={"/aryan"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#00f5d4] rounded-[inherit]"
