@@ -28,7 +28,12 @@ const SideNav = ({ setColorActivate, currentHomeVariant, setColor }) => {
       sidebar_items.forEach((item) => {
         if (item != sidebar_item) {
           item.style.opacity = 0.4;
-          item.firstChild.style.backgroundColor = "#4aba91";
+          if (currentHomeVariant == 1 || currentHomeVariant == 4) {
+            item.firstChild.style.backgroundColor = "#000";
+          }
+          else {
+            item.firstChild.style.backgroundColor = "#fff";
+          }
         }
       });
     };
@@ -94,7 +99,10 @@ const SideNav = ({ setColorActivate, currentHomeVariant, setColor }) => {
             },
           },
         }}
-        className="absolute pointer-events-none sidebar_dot top-1/2 right-3 bg-[#4aba91] min-w-[8px] h-4 translate-y-[-50%] rounded"
+        style={{
+          backgroundColor: currentHomeVariant == 1 || currentHomeVariant == 4 ? "#000" : "#fff",
+        }}
+        className="absolute pointer-events-none sidebar_dot top-1/2 right-3  min-w-[8px] h-4 translate-y-[-50%] rounded"
       ></motion.div>
       <motion.div
         //text

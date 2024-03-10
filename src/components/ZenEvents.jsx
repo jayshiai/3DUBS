@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 const combinations = [
@@ -14,7 +14,7 @@ const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const ZenEvents = () => {
   const wrapperRef = useRef();
-
+  const [text, setText] = useState("The Three Dubs");
   useEffect(() => {
     const interval = setInterval(() => {
       const index = rand(0, combinations.length - 1),
@@ -68,44 +68,45 @@ const ZenEvents = () => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
+        onMouseLeave={() => setText("The Three Dubs")}
       >
-        <Link href={"/crew"} className="shape  flex justify-center items-center">
+        <Link onMouseEnter={() => setText("Our Crew")} href={"/crew"} className="shape hover:scale-110   flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#b0bec5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link href={"/about"} className="shape flex justify-center items-center">
+        <Link onMouseEnter={() => setText("About Us")} href={"/about"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#f5f5f5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link href={"/jayvardhan"} className="shape flex justify-center items-center">
+        <Link onMouseEnter={() => setText("Jayvardhan Patil")} href={"/jayvardhan"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#9b5de5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link href={"/contactus"} className="shape flex justify-center items-center">
+        <Link onMouseEnter={() => setText("Contact Us")} href={"/contactus"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#f15bb5] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link href={"/projects"} className="shape flex justify-center items-center">
+        <Link onMouseEnter={() => setText("Projects")} href={"/projects"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#fee440] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link href={"/kunal"} className="shape flex justify-center items-center">
+        <Link onMouseEnter={() => setText("Kunal Sharma")} href={"/kunal"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#00bbf9] rounded-[inherit]"
           ></motion.div>
         </Link>
-        <Link href={"/aryan"} className="shape flex justify-center items-center">
+        <Link onMouseEnter={() => setText("Aryan Singh")} href={"/aryan"} className="shape hover:scale-110  flex justify-center items-center">
           <motion.div
             variants={shapeVariant}
             className="h-full w-full bg-[#00f5d4] rounded-[inherit]"
@@ -120,8 +121,7 @@ const ZenEvents = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-        >
-          The Three Dubs
+        >{text}
         </motion.p>
       </div>
 
@@ -132,8 +132,7 @@ const ZenEvents = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-        >
-          The Three Dubs
+        >{text}
         </motion.p>
       </div>
     </>
