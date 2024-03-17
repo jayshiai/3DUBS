@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { Canvas } from 'react-three-fiber'
 
 import MarqueeText from './MarqueeText';
-import { m } from 'framer-motion';
 const RandomCircle = ({ color }) => {
   const [hovered, setHover] = useState(false);
   const [moveRandomly, setMoveRandomly] = useState(false);

@@ -84,12 +84,14 @@ export default function Home() {
       // Parse the config JSON string
       const config = JSON.parse(configString);
 
-      // Update the variant index based on the 'about' key in the config
+      // Update the variant index based on the 'home' key in the config
       setVariantIndex(config['home']);
+
       if (config['home'] != 5) {
         setIntroVariantIndex(config['intro']);
       }
       else {
+        //special case for bindows
         setIntroVariantIndex(2);
       }
     }
