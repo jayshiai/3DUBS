@@ -119,7 +119,7 @@ There are two types of Marquee used in this repo.
 ## HTML & CSS based
 #### Implemented in `/src/components/nav/SimpleMarquee.jsx`
 Used in one of the Navigation variant.
-![Marquee](./public/readme)
+![Marquee](./public/readme/marquee.png)
 
 This is implemented by writing the text multiple times until it exceeds the screen:
 ```HTML
