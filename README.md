@@ -236,9 +236,9 @@ function Plane({ text, hovered, color }) {
 ```
 
 ### Shaders :-
-Moving on into the `shaders`. If you are not familiar with `Computer Graphics` or even `video games`, shaders would be a new term to you. Basically, shaders are just a piece of program that runs on every pixel and/or vertex of an image/frame. Since a single 1080p frame consists of over a million pixels and you render at least 60 Frames per second, that adds up to over 60 million computations per second. That is quite intensive and hard to run on CPU.
+Moving onto the `shaders`. If you are not familiar with `Computer Graphics` or even `video games`, shaders would be a new term to you. Basically, shaders are just a piece of program that runs on every pixel and/or vertex of an image/frame. Since a single 1080p frame consists of over a million pixels and you render at least 60 Frames per second, that adds up to over 60 million computations per second. That is quite intensive and hard to run on CPU.
 
-That's where `GLSL` comes in. It is the language in which shaders are written and it runs of GPU instead of CPU, where it is easier to run parallel computations, make it a trivial task to do those 60 million+ computations.
+That's where `GLSL` comes in. It is the language in which shaders are written and it runs on GPU instead of CPU, where it is easier to run parallel computations, making it a trivial task to do those 60 million+ computations.
 
 You might notice that `GLSL` is quite similar to `C++`.
 
@@ -255,7 +255,7 @@ Now, Shaders are of two types:
 
 Each shader must have these two things -
 1. uniforms.
-2.  main function.
+2. main function.
 
 ```c++
 varying vec2 vUv;
