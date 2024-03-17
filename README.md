@@ -12,12 +12,10 @@ Feel free to clone it and run it locally. You can even modify and deploy it as l
 - [Marquee](#marquee)
   * [HTML & CSS based](#html---css-based)
   * [Canvas / 3D](#canvas---3d)
-      - [Implemented in `/src/components/MarqueeText.jsx`](#implemented-in---src-components-marqueetextjsx-)
     + [Shaders :-](#shaders---)
 - [3D Individual Page](#3d-individual-page)
-      - [Implemented in `/src/components/GL` with the shader materials in `/src/components/GL/material`](#implemented-in---src-components-gl--with-the-shader-materials-in---src-components-gl-material-)
     + [Shaders:](#shaders-)
-      - [Now just modify the shape and fragment shaders for movement direction to get infinite amount of variants.](#now-just-modify-the-shape-and-fragment-shaders-for-movement-direction-to-get-infinite-amount-of-variants)
+     
 - [Terrain](#terrain)
       - [Implemented in `/src/components/GL` with the shader materials in `/src/components/GL/material`](#implemented-in---src-components-gl--with-the-shader-materials-in---src-components-gl-material--1)
       - [Sky Box](#sky-box)
