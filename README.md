@@ -4,14 +4,13 @@ Feel free to clone it and run it locally. You can even modify and deploy it as l
 
 ### Also to get basic idea of what some components do and how they are coded, you can refer to the ReadMe below. Some of the code has been explained below.
 # Table of Content
-    + [Also to get basic idea of what some components do and how they are coded, you can refer to the ReadMe below. Some of the code has been explained below.](#also-to-get-basic-idea-of-what-some-components-do-and-how-they-are-coded--you-can-refer-to-the-readme-below-some-of-the-code-has-been-explained-below)
+  
   * [Getting Started](#getting-started)
   * [How does the site randomizer works?](#how-does-the-site-randomizer-works-)
-      - [In case you want to avoid randomized pages, just directly access the page containing that variant. You can find the routes to all variants in `/src/app` . If you can't find the page variant you want, just create new route and import the desired components into it.](#in-case-you-want-to-avoid-randomized-pages--just-directly-access-the-page-containing-that-variant-you-can-find-the-routes-to-all-variants-in---src-app---if-you-can-t-find-the-page-variant-you-want--just-create-new-route-and-import-the-desired-components-into-it)
+      - [Avoid Randomizer](#in-case-you-want-to-avoid-randomized-pages--just-directly-access-the-page-containing-that-variant-you-can-find-the-routes-to-all-variants-in---src-app---if-you-can-t-find-the-page-variant-you-want--just-create-new-route-and-import-the-desired-components-into-it)
 - [Variants](#variants)
 - [Marquee](#marquee)
   * [HTML & CSS based](#html---css-based)
-      - [Implemented in `/src/components/nav/SimpleMarquee.jsx`](#implemented-in---src-components-nav-simplemarqueejsx-)
   * [Canvas / 3D](#canvas---3d)
       - [Implemented in `/src/components/MarqueeText.jsx`](#implemented-in---src-components-marqueetextjsx-)
     + [Shaders :-](#shaders---)
