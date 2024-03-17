@@ -166,7 +166,7 @@ This is implemented by using Font as texture on Plane geometry and using **Verte
 
 This implementation does require prior knowledge of `ThreeJS` and `Shaders` but I'll try to explain it in way that makes it easy to understand even if you don't have the required knowledge.
 
-First, were create `Text component` using `Text` from `react-three/drei`. Pass it the font size and scale in x, y and z axis. We all specify the font family by passing its `ttf` file.
+First, were create `Text component` using `Text` from `react-three/drei`. Pass in the font size and scale in x, y and z axis. We will specify the font family by passing its `ttf` file.
 ```jsx
 import {Text} from "@react-three/drei";
 function TextComp({ text }) {
