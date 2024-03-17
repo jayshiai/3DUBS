@@ -160,7 +160,7 @@ Since we have 4 repetitions of the Text, if `translate in X direction by -25%` t
 ## Canvas / 3D
 #### Implemented in `/src/components/MarqueeText.jsx`
 The ORDER/CHAOS in background of Circle and few other Home variants.
-![[3dMarquee.png]]
+![3D Marquee](./public/readme/3dMarquee.png)
 
 This is implemented by using Font as texture on Plane geometry and using **Vertex Shaders** to move the texture to left or right based on its Y-coordinate.
 
@@ -476,7 +476,7 @@ So final `main()` function is :
 Thus, you have successfully implemented Marquee effect in 3D space using `ThreeJS (R3F)` and `shaders`.
 # 3D Individual Page
 #### Implemented in `/src/components/GL` with the shader materials in `/src/components/GL/material`
-![[jayvardhan.png]]
+![Jayvardhan](./public/readme/jayvardhan.png)
 
 Implementing code for above 3D animation is surprisingly similar to the `3D Marquee` effect.
 We basically follow the same steps.
@@ -601,13 +601,13 @@ This way, we just finished creating a sleek 3D shape effect that create illusion
 #### Now just modify the shape and fragment shaders for movement direction to get infinite amount of variants.
 Examples. 
 1. Sphere and Vertical Movement : -
-		![[kunal.png]]
+		![Kunal](./public/readme/kunal.png)
 2. Box/ Stretched Cubs and Horizontal Movement:-
-		![[aryan.png]]
+		![Aryan](./public/readme/aryan.png)
 
 # Terrain
 #### Implemented in `/src/components/GL` with the shader materials in `/src/components/GL/material`
-![[terrain.png]]
+![Terrain](./public/readme/terrain.png)
 
 Terrain is made up of 2 components:
 1. Sky Box
@@ -710,8 +710,8 @@ Since this function is run on each vertex and random function randomly assigns v
 ##### There is lot more to the Terrain than explained above, like changing mountain height with mouse movement or creating the path between the mountains. However, for sake of brevity, I've left it out. But the code is self-explanatory.
 # Circle
 #### Implemented in `/src/components/RandomCircle.jsx` and `/src/components/ParticleCircle.jsx`
+![Circle](./public/readme/circle.png)
 
-![[circle.png]]
 
 The circle is made up of `praticles` which are just small `spheres`. So we can just create a `particle` using `Sphere Geometry`. Since I want to position them as well as change their color, I pass them in as arguments and set the particle color using `shader material`
 ```jsx
