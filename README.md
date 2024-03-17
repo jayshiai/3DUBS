@@ -392,6 +392,7 @@ Ok, that's quite a lot to unwrap. Let's start with the functions.
 - `applyGlitch()`
 	`applyGlitch()` function is used to separate the `red`, `blue` and `green` channels of the frame and move them randomly to create glitch effect.
 	This is accomplished by offsetting the `uv` of each channel. This `offset` is added back into the `uv` and the glitch intensity is set by multiplying the offset by `glitchIntensity`
+	![Glitch](./public/readme/glitch.png)
 ```c++
   // Separate UV offsets for red, green, and blue channels
       vec2 redOffset = vec2(
