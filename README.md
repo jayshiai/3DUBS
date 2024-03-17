@@ -36,7 +36,10 @@ Then, cd into the cloned directory:
 ```bash
 cd 3DUBS
 ```
-
+Now, install all the dependencies:
+```bash
+npm install
+```
 Finally, run the development server:
 
 ```bash
