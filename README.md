@@ -22,7 +22,7 @@ Feel free to clone it and run it locally. You can even modify and deploy it as l
     * [Cnoise Credit](#the-cnoise-function-used-in-vertex-shaders-is-open-source-code-authored-by-stefan-gustavson-properly-credited-in-the-shader-file)
         
 - [Circle](#circle)
-      - [Color change on Side Nav Bar hover](#implementing-color-change-on-side-nav-bar-hover)
+    - [Color change on Side Nav Bar hover](#implementing-color-change-on-side-nav-bar-hover)
 
 
 ## Getting Started
