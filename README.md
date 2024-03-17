@@ -113,9 +113,11 @@ Now every time a page loads in that session, it checks this stored config and us
 I won't be explaining all the variants, but I'll cover the one's that I think are most interesting and might impart the major part of knowledge required to understand code of other variants.
 
 # Marquee
-There are two types of Marquee used in this repo. 
-	1. HTML and CSS based
+There are two types of Marquee used in this repo.
+	
+ 	1. HTML and CSS based
 	2.  Canvas / 3D 
+ 
 ## HTML & CSS based
 #### Implemented in `/src/components/nav/SimpleMarquee.jsx`
 Used in one of the Navigation variant.
