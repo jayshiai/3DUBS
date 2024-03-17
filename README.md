@@ -17,17 +17,14 @@ Feel free to clone it and run it locally. You can even modify and deploy it as l
     + [Shaders:](#shaders-)
      
 - [Terrain](#terrain)
-      - [Implemented in `/src/components/GL` with the shader materials in `/src/components/GL/material`](#implemented-in---src-components-gl--with-the-shader-materials-in---src-components-gl-material--1)
-      - [Sky Box](#sky-box)
-      - [Terrain Plane](#terrain-plane)
-      - [Shaders:](#shaders--1)
-      - [The cnoise function used in vertex shaders is open-source code Authored by Stefan Gustavson. Properly Credited in the shader file.](#the-cnoise-function-used-in-vertex-shaders-is-open-source-code-authored-by-stefan-gustavson-properly-credited-in-the-shader-file)
-        * [There is lot more to the Terrain than explained above, like changing mountain height with mouse movement or creating the path between the mountains. However, for sake of brevity, I've left it out. But the code is self-explanatory.](#there-is-lot-more-to-the-terrain-than-explained-above--like-changing-mountain-height-with-mouse-movement-or-creating-the-path-between-the-mountains-however--for-sake-of-brevity--i-ve-left-it-out-but-the-code-is-self-explanatory)
+      + [Sky Box](#sky-box)
+      + [Terrain Plane](#terrain-plane)
+      	- [Shaders:](#shaders--1)
+      + [Cnoise Credit](#the-cnoise-function-used-in-vertex-shaders-is-open-source-code-authored-by-stefan-gustavson-properly-credited-in-the-shader-file)
+        
 - [Circle](#circle)
-      - [Implemented in `/src/components/RandomCircle.jsx` and `/src/components/ParticleCircle.jsx`](#implemented-in---src-components-randomcirclejsx--and---src-components-particlecirclejsx-)
-      - [Implementing color change on Side Nav Bar hover](#implementing-color-change-on-side-nav-bar-hover)
+      - [Color change on Side Nav Bar hover](#implementing-color-change-on-side-nav-bar-hover)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Getting Started
 
