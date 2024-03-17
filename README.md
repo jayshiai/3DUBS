@@ -309,7 +309,7 @@ export default BoxShaderMaterial;
 ```
 `GLSL` has reserved few variable names for specific purposes. Names such as `position`, `gl_Position` and  `uv`  represent the position, final position and co-ordinates of the pixel we are working on.
 Here `vUv` is the coordinate of the pixel/vertex the `vertex shader` is currently running on and is used to pass this information to `fragment shader`.
-`vec1`, `vec2`, `vec3`, `vec4` are simply vectors of values. In above come, we are simply converting `position` vector, which is `vec3` into `vec4` and assigning it to final `gl_Position`
+`vec1`, `vec2`, `vec3`, `vec4` are simply vectors of values. In above code, we are simply converting `position` vector, which is `vec3` into `vec4` and assigning it to final `gl_Position`
 
 
 Now we'll write `Fragment Shaders` to continuously move the text in x-direction to create the marquee effect as well as apply glitch effect on hover.
@@ -389,9 +389,11 @@ Now we'll write `Fragment Shaders` to continuously move the text in x-direction 
 ```
 Ok, that's quite a lot to unwrap. Let's start with the functions.
 - `random()`
+  
 	`random()` function is very crude method of generating random number.
 
 - `applyGlitch()`
+  
 	`applyGlitch()` function is our version of `Chromatic Abberation` effect seen mostly in films or video games.
 	It is used to separate the `red`, `blue` and `green` channels of the frame and move them randomly to create glitch effect.
 	This is accomplished by offsetting the `uv` of each channel. This `offset` is added back into the `uv` and the glitch intensity is set by multiplying the offset by `glitchIntensity`
