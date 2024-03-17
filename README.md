@@ -638,6 +638,7 @@ Examples.
 
 # Terrain
 #### Implemented in `/src/components/GL` with the shader materials in `/src/components/GL/material`
+### Fun fact :- The Terrain changes its variant based on time of day. You can check out the different varaints by manually setting the route. example : `3dubs.in/terrain?dayTime=2` will give you evening variant. 0 - Morning and 1 - Night
 ![Terrain](./public/readme/terrain.png)
 
 Terrain is made up of 2 components:
