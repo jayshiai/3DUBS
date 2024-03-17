@@ -1,3 +1,4 @@
+![3Dubs](./public/readme/3Dubs.png)
 Welcome to the repository containing 3dubs.in's source code.
 
 Feel free to clone it and run it locally. You can even modify and deploy it as long as you make sure to credit us.
