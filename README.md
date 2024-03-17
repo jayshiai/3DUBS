@@ -15,12 +15,12 @@ Feel free to clone it and run it locally. You can even modify and deploy it as l
     + [Shaders :-](#shaders---)
 - [3D Individual Page](#3d-individual-page)
     + [Shaders:](#shaders-)
-     
-* [Terrain](#terrain)
-      + [Sky Box](#sky-box)
-      + [Terrain Plane](#terrain-plane)
-      	- [Shaders:](#shaders--1)
-      + [Cnoise Credit](#the-cnoise-function-used-in-vertex-shaders-is-open-source-code-authored-by-stefan-gustavson-properly-credited-in-the-shader-file)
+  
+- [Terrain](#terrain)
+      * [Sky Box](#sky-box)
+      * [Terrain Plane](#terrain-plan
+      	+ [Shaders:](#shaders--1)
+      * [Cnoise Credit](#the-cnoise-function-used-in-vertex-shaders-is-open-source-code-authored-by-stefan-gustavson-properly-credited-in-the-shader-file)
         
 - [Circle](#circle)
       - [Color change on Side Nav Bar hover](#implementing-color-change-on-side-nav-bar-hover)
