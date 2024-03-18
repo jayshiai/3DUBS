@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&family=Sacramento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Monofett&family=Raleway:wght@900&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Julius+Sans+One&family=Splash&family=Syncopate:wght@400;700&family=Vujahday+Script&family=Water+Brush&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,6 +36,44 @@
     url('/fonts/OverusedGrotesk-VF.woff2') format('woff2-variations');
   font-weight: 300 900;
 }
+
+.splash {
+  font-family: "Splash", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.water {
+  font-family: "Water Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.vujahday {
+  font-family: "Vujahday Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.syncopate {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.brush {
+  font-family: "Comforter Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.julius {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .rubik {
   font-family: 'Rubik Mono One', monospace;
