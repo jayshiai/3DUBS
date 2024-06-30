@@ -16,7 +16,7 @@ const ImageColumnInverse = ({ clicked, pics, setLoadedImages, loaded }) => {
           duration: 6,
 
           ease: "linear",
-          repeat: "Infinity",
+          repeat: Infinity,
           repeatType: "loop",
         },
         opacity: {
@@ -96,7 +96,7 @@ const ImageColumnInverse = ({ clicked, pics, setLoadedImages, loaded }) => {
                     alt="image"
                     sizes="20vw"
                     className="object-cover"
-                    onLoad={() => setLoadedImages((prev) => prev + 1)}
+                    onLoad={() => setLoadedImages()}
                   />
                 </div>
               ))}

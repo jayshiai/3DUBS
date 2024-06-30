@@ -4,7 +4,7 @@ import ImageColumn from "@/components/preloader/ImageColumn";
 import ImageColumnContainer from "@/components/preloader/ImageColumnContainer";
 import ImageColumnInverse from "@/components/preloader/ImageColumnInverse";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 const picsContainer = [
     "1",
     "12",
@@ -31,13 +31,19 @@ const ImageIntro = ({ completed, setCompleted }) => {
     const [clicked, setClicked] = useState(false);
     const [loaded, setLoaded] = useState(false);
     const [loadedImages, setLoadedImages] = useState(0);
-    useEffect(() => {
-        if (loadedImages == 20) {
+    const loadedImagesRef = useRef(0);
+
+    const incrementLoadedImages = () => {
+        loadedImagesRef.current += 1;
+        setLoadedImages(loadedImagesRef.current);
+        console.log(`Loaded Images: ${loadedImages}`);
+        if (loadedImagesRef.current === 20) {
             setTimeout(() => {
                 setLoaded(true);
             }, 1750);
         }
-    }, [loadedImages]);
+    };
+
     return (
         <div
             onClick={() => setClicked(true)}
@@ -52,31 +58,31 @@ const ImageIntro = ({ completed, setCompleted }) => {
                 <ImageColumnInverse
                     clicked={clicked}
                     pics={picsContainer.slice(0, 4)}
-                    setLoadedImages={setLoadedImages}
+                    setLoadedImages={incrementLoadedImages}
                     loaded={loaded}
                 />
                 <ImageColumn
                     clicked={clicked}
                     pics={picsContainer.slice(4, 8)}
-                    setLoadedImages={setLoadedImages}
+                    setLoadedImages={incrementLoadedImages}
                     loaded={loaded}
                 />
                 <ImageColumnInverse
                     clicked={clicked}
                     pics={picsContainer.slice(8, 12)}
-                    setLoadedImages={setLoadedImages}
+                    setLoadedImages={incrementLoadedImages}
                     loaded={loaded}
                 />
                 <ImageColumn
                     clicked={clicked}
                     pics={picsContainer.slice(12, 16)}
-                    setLoadedImages={setLoadedImages}
+                    setLoadedImages={incrementLoadedImages}
                     loaded={loaded}
                 />
                 <ImageColumnInverse
                     clicked={clicked}
                     pics={picsContainer.slice(16, 20)}
-                    setLoadedImages={setLoadedImages}
+                    setLoadedImages={incrementLoadedImages}
                     loaded={loaded}
                 />
             </ImageColumnContainer>
