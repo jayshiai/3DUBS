@@ -41,7 +41,7 @@ const ImageIntro = ({ completed, setCompleted }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setLoadedImages(20);
+
             setTimeout(() => {
                 setLoaded(true);
             }, 1000);
