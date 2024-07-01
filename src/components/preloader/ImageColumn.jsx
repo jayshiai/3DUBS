@@ -15,7 +15,7 @@ const ImageColumn = ({ clicked, pics, setLoadedImages, loaded }) => {
           duration: 6,
 
           ease: "linear",
-          repeat: "Infinity",
+          repeat: Infinity,
           repeatType: "loop",
         },
         opacity: {
