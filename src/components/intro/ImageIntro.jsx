@@ -42,7 +42,7 @@ const ImageIntro = ({ completed, setCompleted }) => {
         const timer = setTimeout(() => {
             console.log("Loaded")
             setLoaded(true);
-        }, 10000); // 10 seconds
+        }, 6000); // 10 seconds
 
         return () => clearTimeout(timer); // Cleanup timer on unmount
     }, []);
