@@ -210,7 +210,7 @@ function TextComp({ text }) {
 }
 ```
 
-Next, we create a plane geometry, and attach the `Shader Material` (we'll get to shader material in a moment). Then we attach the `Text component` we created by rendering it into scene using `createPortal hook` from `R3F`. `Scene` just refers to your rendered 3D space and you can think of `geomerty` as a brick wall and `material` as paint on that brick wall. 
+Next, we create a plane geometry, and attach the `Shader Material` (we'll get to shader material in a moment). Then we attach the `Text component` we created by rendering it into scene using `createPortal hook` from `R3F`. `Scene` just refers to your rendered 3D space and you can think of `geometry` as a brick wall and `material` as paint on that brick wall. 
 ```jsx
 import BoxShaderMaterial from "./GL/material/boxShaderMaterial";
 
