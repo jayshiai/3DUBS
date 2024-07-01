@@ -96,7 +96,7 @@ const ImageColumnInverse = ({ clicked, pics, setLoadedImages, loaded }) => {
                     alt="image"
                     sizes="20vw"
                     className="object-cover"
-                    onLoad={() => setLoadedImages()}
+                    onLoad={() => setLoadedImages((prev) => prev + 1)}
                   />
                 </div>
               ))}
