@@ -38,10 +38,13 @@ const ImageIntro = ({ completed, setCompleted }) => {
             }, 1750);
         }
     }, [loadedImages]);
+
     useEffect(() => {
         const timer = setTimeout(() => {
-            console.log("Loaded")
-            setLoaded(true);
+            setLoadedImages(20);
+            setTimeout(() => {
+                setLoaded(true);
+            }, 1000);
         }, 6000); // 10 seconds
 
         return () => clearTimeout(timer); // Cleanup timer on unmount
